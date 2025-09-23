@@ -1,0 +1,7 @@
+﻿  MenuScene.cpp
+  正在生成代码
+  Previous IPDB and IOBJ mismatch, fall back to full compilation.
+D:\code\game\include\core\SceneManager.h(18): warning C4715: “SceneManager::Is_Empty”: 不是所有的控件路径都返回值
+  All 101 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  已完成代码的生成
+  game.vcxproj -> D:\code\game\x64\Release\game.exe
