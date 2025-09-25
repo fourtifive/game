@@ -14,7 +14,14 @@ namespace ECS {
 		Entity Create_entity()
 		{
 			return entity_mgr.Create_Entity();
+
 		}
+
+		Entity Create_Entity(Entity id)
+		{
+			return entity_mgr.Create_Entity(id);
+		}
+
 		//destory entity
 		void Destory_Entity(Entity id)
 		{

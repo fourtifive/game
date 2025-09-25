@@ -132,6 +132,7 @@
     <ClCompile Include="src\Scene\MenuScene.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\core\InuputManager.h" />
     <ClInclude Include="include\core\Math.h" />
     <ClInclude Include="include\ECS\Component.h" />
     <ClInclude Include="include\ECS\ComponentStorage.h" />
@@ -141,6 +142,7 @@
     <ClInclude Include="include\core\world.h" />
     <ClInclude Include="include\core\Scene.h" />
     <ClInclude Include="include\ECS\System.h" />
+    <ClInclude Include="include\ECS\TransSystem.h" />
     <ClInclude Include="include\Scene\GameScene.h" />
     <ClInclude Include="include\Scene\MenuScene.h" />
   </ItemGroup>

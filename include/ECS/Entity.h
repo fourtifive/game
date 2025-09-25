@@ -1,5 +1,5 @@
 #pragma once
-
+const unsigned int PLAYER = 1;
 #include<vector>
 
 namespace ECS {
@@ -18,6 +18,14 @@ namespace ECS {
 			}
 			else
 				id = id_count++;
+			entities.push_back(id);
+
+			return id;
+		}
+
+		Entity Create_Entity(Entity id) {
+			if (id_count == id)id_count++;
+
 			entities.push_back(id);
 
 			return id;

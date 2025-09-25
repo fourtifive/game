@@ -83,5 +83,11 @@
     <ClInclude Include="include\core\Math.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="include\ECS\TransSystem.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\core\InuputManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

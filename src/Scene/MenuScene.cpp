@@ -7,6 +7,7 @@ void MenuScene::Enter(SceneManager* mgr)
 {
 	scene_mgr = mgr;
 	std::cout << "Enter MenuScene"<<std::endl;
+
 }
 
 void MenuScene::Exit()
