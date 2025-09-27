@@ -1,13 +1,13 @@
-#include <core/DeltaTimer.h>
+#include <core/Timer.h>
 
 
 
-DeltaTimer::DeltaTimer()
+Timer::Timer()
 {
     last_time = std::chrono::high_resolution_clock::now();
 }
 
-float DeltaTimer::Updata()
+float Timer::Updata()
 {
     auto current_time=std::chrono::high_resolution_clock::now();
     std::chrono::duration<float>diff =  current_time-last_time;
@@ -17,12 +17,12 @@ float DeltaTimer::Updata()
     return delta_time;
 }
 
-float DeltaTimer::Get_Delta() const
+float Timer::Get_Delta() const
 {
     return delta_time;
 }
 
-void DeltaTimer::Reset()
+void Timer::Reset()
 {
     last_time = std::chrono::high_resolution_clock::now();
     delta_time = 0;

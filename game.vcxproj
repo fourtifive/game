@@ -138,7 +138,7 @@
     <ClInclude Include="include\ECS\ComponentStorage.h" />
     <ClInclude Include="include\ECS\Entity.h" />
     <ClInclude Include="include\ECS\ECSManager.h" />
-    <ClInclude Include="include\core\DeltaTimer.h" />
+    <ClInclude Include="include\core\Timer.h" />
     <ClInclude Include="include\core\world.h" />
     <ClInclude Include="include\core\Scene.h" />
     <ClInclude Include="include\ECS\System.h" />

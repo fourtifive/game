@@ -9,7 +9,7 @@ namespace ECS {
 		~TransSystem()=default;
 
 		void Update(ECSManager& mgr, float delta_time) {
-
+			
 		}
 	private:
 

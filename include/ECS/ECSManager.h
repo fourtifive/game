@@ -42,11 +42,26 @@ namespace ECS {
 		}
 
 		//traverse component
+		template<typename Func>
+		void Traverse_Eachtrans(Func&& func)
+		{
+			for (auto& [id, comp] : translate) {
+				func(id, comp, dt);
+			}
+		}
+
+		//update my system
+		void Update(float dt)
+		{
+			system_mgr.Update(*this,dt);
+		}
 
 
 	private:
 		EntityManager entity_mgr;
 		SystemManager system_mgr;
 		CompStorage<Translate> translate;
+
+		SystemManager system_mgr;
 	};
 }

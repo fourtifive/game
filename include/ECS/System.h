@@ -13,7 +13,7 @@ namespace ECS {
 		System() = default;
 		~System() = default;
 		
-		virtual void Update(float dt,ECSManager& ecs_mgr) = 0;
+		virtual void Update(ECSManager& ecs_mgr,float dt) = 0;
 
 		//可添加在系统内部Add实体的方法以及remove实体的方法
 
@@ -41,7 +41,7 @@ namespace ECS {
 		void Update(ECSManager& mgr, float delta_time)
 		{
 			for (auto& system : systems)
-				system->Update(delta_time,mgr);
+				system->Update(mgr,delta_time);
 		}
 
 

@@ -53,7 +53,7 @@
     <ClInclude Include="include\core\world.h">
       <Filter>头文件\core</Filter>
     </ClInclude>
-    <ClInclude Include="include\core\DeltaTimer.h">
+    <ClInclude Include="include\core\Timer.h">
       <Filter>头文件\core</Filter>
     </ClInclude>
     <ClInclude Include="include\core\Scene.h">

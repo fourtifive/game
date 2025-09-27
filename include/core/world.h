@@ -1,7 +1,7 @@
 #pragma once
 
 #include"SceneManager.h"
-#include"DeltaTimer.h"
+#include"Timer.h"
 
 class GameWorld
 {
@@ -18,5 +18,5 @@ private:
 
 private:
 	SceneManager scene_mgr;
-	DeltaTimer timer;
+	Timer timer;
 };
