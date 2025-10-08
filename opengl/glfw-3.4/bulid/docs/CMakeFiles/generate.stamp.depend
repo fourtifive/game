@@ -1,0 +1,5 @@
+# CMake generation dependency list for this directory.
+D:/opengl/glfw-3.4/docs/CMakeLists.txt
+D:/share/cmake-4.0/Modules/FindDoxygen.cmake
+D:/share/cmake-4.0/Modules/FindPackageHandleStandardArgs.cmake
+D:/share/cmake-4.0/Modules/FindPackageMessage.cmake

@@ -1,0 +1,11 @@
+{
+	"InstallScripts" : 
+	[
+		"D:/opengl/glfw-3.4/bulid/cmake_install.cmake",
+		"D:/opengl/glfw-3.4/bulid/src/cmake_install.cmake",
+		"D:/opengl/glfw-3.4/bulid/examples/cmake_install.cmake",
+		"D:/opengl/glfw-3.4/bulid/tests/cmake_install.cmake",
+		"D:/opengl/glfw-3.4/bulid/docs/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
