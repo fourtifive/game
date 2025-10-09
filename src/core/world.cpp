@@ -30,3 +30,9 @@ void GameWorld::game_on()
 	EndBatchDraw();
 
 }
+
+bool GameWorld::Init() {
+	glfwInit();
+
+	input_mgr.Init();
+}

@@ -5,10 +5,10 @@
 class InputManager
 {
 public:
-	InputManager()=default;
+	InputManager()=default; 
 	~InputManager();
 
-	bool Init_Inputmgr();
+	bool Init();
 
 private:
 

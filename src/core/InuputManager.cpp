@@ -1,6 +1,6 @@
 #include "core/InuputManager.h"
 
-bool InputManager::Init_Inputmgr()
+bool InputManager::Init()
 {
-    return false;
+    
 }
