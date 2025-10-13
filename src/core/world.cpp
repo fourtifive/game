@@ -8,7 +8,7 @@
 void GameWorld::game_on()
 {
 	initgraph(1280, 720, EX_SHOWCONSOLE);
-
+	//
 	BeginBatchDraw();
 
 	scene_mgr.Switch_Scene(std::make_unique<MenuScene>());
@@ -35,4 +35,5 @@ bool GameWorld::Init() {
 	glfwInit();
 
 	input_mgr.Init();
+	return 1;
 }

@@ -1,13 +1,13 @@
 ﻿  InuputManager.cpp
-  DeltaTimer.cpp
-  GameScene.cpp
-  main.cpp
-  SceneManager.h
   world.cpp
-  MenuScene.cpp
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\minwindef.h(130,9): warning C4005: “APIENTRY”: 宏重定义
+  (编译源文件“src/core/world.cpp”)
+      D:\code\game\opengl\glfw\include\GLFW\glfw3.h(123,11):
+      参见“APIENTRY”的前一个定义
+  
   正在生成代码
-  0 of 101 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
-    0 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
+  Previous IPDB and IOBJ mismatch, fall back to full compilation.
+D:\code\game\include\core\SceneManager.h(18): warning C4715: “SceneManager::Is_Empty”: 不是所有的控件路径都返回值
+  All 249 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   已完成代码的生成
   game.vcxproj -> D:\code\game\x64\Release\game.exe

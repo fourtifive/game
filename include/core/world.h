@@ -18,7 +18,7 @@ public:
 	bool Init();
 
 private:
-	GameWorld() {};
+	GameWorld();
 
 private:
 	SceneManager scene_mgr;

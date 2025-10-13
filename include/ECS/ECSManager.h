@@ -45,7 +45,7 @@ namespace ECS {
 		template<typename Func>
 		void Traverse_Eachtrans(Func&& func)
 		{
-			for (auto& [id, comp] : translate) {
+			for (auto& [id, comp] : translate.Get_Comp()) {
 				func(id, comp, dt);
 			}
 		}
