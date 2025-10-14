@@ -3,32 +3,32 @@
   "WorkspaceRootPath": "D:\\code\\game\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C31D3654-7F81-46E4-8373-2C12B8FCAFF9}|game.vcxproj|D:\\code\\game\\src\\core\\world.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C31D3654-7F81-46E4-8373-2C12B8FCAFF9}|game.vcxproj|solutionrelative:src\\core\\world.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C31D3654-7F81-46E4-8373-2C12B8FCAFF9}|game.vcxproj|D:\\code\\game\\src\\core\\InuputManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{C31D3654-7F81-46E4-8373-2C12B8FCAFF9}|game.vcxproj|solutionrelative:src\\core\\InuputManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C31D3654-7F81-46E4-8373-2C12B8FCAFF9}|game.vcxproj|D:\\code\\game\\include\\core\\world.h||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{C31D3654-7F81-46E4-8373-2C12B8FCAFF9}|game.vcxproj|solutionrelative:include\\core\\world.h||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C31D3654-7F81-46E4-8373-2C12B8FCAFF9}|game.vcxproj|D:\\code\\game\\include\\core\\InuputManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{C31D3654-7F81-46E4-8373-2C12B8FCAFF9}|game.vcxproj|solutionrelative:include\\core\\InuputManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{C31D3654-7F81-46E4-8373-2C12B8FCAFF9}|game.vcxproj|D:\\code\\game\\src\\core\\world.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C31D3654-7F81-46E4-8373-2C12B8FCAFF9}|game.vcxproj|solutionrelative:src\\core\\world.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C31D3654-7F81-46E4-8373-2C12B8FCAFF9}|game.vcxproj|D:\\code\\game\\include\\core\\world.h||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{C31D3654-7F81-46E4-8373-2C12B8FCAFF9}|game.vcxproj|solutionrelative:include\\core\\world.h||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C31D3654-7F81-46E4-8373-2C12B8FCAFF9}|game.vcxproj|D:\\code\\game\\include\\ECS\\ECSManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{C31D3654-7F81-46E4-8373-2C12B8FCAFF9}|game.vcxproj|solutionrelative:include\\ECS\\ECSManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C31D3654-7F81-46E4-8373-2C12B8FCAFF9}|game.vcxproj|D:\\code\\game\\include\\ECS\\ComponentStorage.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C31D3654-7F81-46E4-8373-2C12B8FCAFF9}|game.vcxproj|solutionrelative:include\\ECS\\ComponentStorage.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C31D3654-7F81-46E4-8373-2C12B8FCAFF9}|game.vcxproj|D:\\code\\game\\include\\ECS\\TransSystem.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{C31D3654-7F81-46E4-8373-2C12B8FCAFF9}|game.vcxproj|solutionrelative:include\\ECS\\TransSystem.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C31D3654-7F81-46E4-8373-2C12B8FCAFF9}|game.vcxproj|D:\\code\\game\\include\\ECS\\ComponentStorage.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C31D3654-7F81-46E4-8373-2C12B8FCAFF9}|game.vcxproj|solutionrelative:include\\ECS\\ComponentStorage.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C31D3654-7F81-46E4-8373-2C12B8FCAFF9}|game.vcxproj|D:\\code\\game\\include\\ECS\\System.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -50,17 +50,17 @@
       "DocumentGroups": [
         {
           "DockedHeight": 292,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "world.h",
               "DocumentMoniker": "D:\\code\\game\\include\\core\\world.h",
               "RelativeDocumentMoniker": "include\\core\\world.h",
-              "ToolTip": "D:\\code\\game\\include\\core\\world.h",
-              "RelativeToolTip": "include\\core\\world.h",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABQAAAAMAAAAAAAAAA==",
+              "ToolTip": "D:\\code\\game\\include\\core\\world.h*",
+              "RelativeToolTip": "include\\core\\world.h*",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAAABEAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-09-27T04:48:02.795Z",
               "IsPinned": true,
@@ -72,46 +72,46 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "world.cpp",
               "DocumentMoniker": "D:\\code\\game\\src\\core\\world.cpp",
               "RelativeDocumentMoniker": "src\\core\\world.cpp",
               "ToolTip": "D:\\code\\game\\src\\core\\world.cpp",
               "RelativeToolTip": "src\\core\\world.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAACoAAAAAAAAAAAAhwDcAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-10-09T04:05:23.796Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "InuputManager.cpp",
               "DocumentMoniker": "D:\\code\\game\\src\\core\\InuputManager.cpp",
               "RelativeDocumentMoniker": "src\\core\\InuputManager.cpp",
-              "ToolTip": "D:\\code\\game\\src\\core\\InuputManager.cpp",
-              "RelativeToolTip": "src\\core\\InuputManager.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAYAAAAAAAAAA==",
+              "ToolTip": "D:\\code\\game\\src\\core\\InuputManager.cpp*",
+              "RelativeToolTip": "src\\core\\InuputManager.cpp*",
+              "ViewState": "AgIAAG0AAAAAAAAAAAAhwHoAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-10-08T11:02:36.684Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "InuputManager.h",
               "DocumentMoniker": "D:\\code\\game\\include\\core\\InuputManager.h",
               "RelativeDocumentMoniker": "include\\core\\InuputManager.h",
-              "ToolTip": "D:\\code\\game\\include\\core\\InuputManager.h",
-              "RelativeToolTip": "include\\core\\InuputManager.h",
-              "ViewState": "AgIAABsAAAAAAAAAAAAAAAgAAAAdAAAAAAAAAA==",
+              "ToolTip": "D:\\code\\game\\include\\core\\InuputManager.h*",
+              "RelativeToolTip": "include\\core\\InuputManager.h*",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAACAAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-09-25T11:45:32.134Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 5,
               "Title": "TransSystem.h",
               "DocumentMoniker": "D:\\code\\game\\include\\ECS\\TransSystem.h",
               "RelativeDocumentMoniker": "include\\ECS\\TransSystem.h",
@@ -119,8 +119,7 @@
               "RelativeToolTip": "include\\ECS\\TransSystem.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-09-25T06:49:12.95Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-25T06:49:12.95Z"
             },
             {
               "$type": "Document",
@@ -130,10 +129,9 @@
               "RelativeDocumentMoniker": "include\\ECS\\ECSManager.h",
               "ToolTip": "D:\\code\\game\\include\\ECS\\ECSManager.h",
               "RelativeToolTip": "include\\ECS\\ECSManager.h",
-              "ViewState": "AgIAACEAAAAAAAAAAAAAADcAAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADcAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-09-20T06:36:39.304Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-20T06:36:39.304Z"
             },
             {
               "$type": "Document",
@@ -145,12 +143,11 @@
               "RelativeToolTip": "include\\ECS\\System.h",
               "ViewState": "AgIAABsAAAAAAAAAAAAAACsAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-09-20T06:37:52.435Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-20T06:37:52.435Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "ComponentStorage.h",
               "DocumentMoniker": "D:\\code\\game\\include\\ECS\\ComponentStorage.h",
               "RelativeDocumentMoniker": "include\\ECS\\ComponentStorage.h",
@@ -158,8 +155,7 @@
               "RelativeToolTip": "include\\ECS\\ComponentStorage.h",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAACAAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-09-20T08:03:04.006Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-20T08:03:04.006Z"
             },
             {
               "$type": "Document",

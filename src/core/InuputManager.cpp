@@ -5,8 +5,8 @@ InputManager& InputManager::Instance() {
     return inst;
 }
 
-bool InputManager::Init(GLFWwindow* window) {
-    if (!window) return;
+bool InputManager::Init_Inputmgr(GLFWwindow* window) {
+    if (!window) return 1;
     // 把 this 绑定到 window 的 user pointer，回调中取回
     glfwSetWindowUserPointer(window, this);
 
@@ -114,4 +114,12 @@ bool InputManager::IsMouseButtonDown(int button) const {
 }
 std::pair<double, double> InputManager::GetCursorPos() const {
     return { cursorX, cursorY };
+}
+
+InputManager::InputManager()
+{
+}
+
+InputManager::~InputManager()
+{
 }

@@ -15,7 +15,7 @@ public:
     static InputManager& Instance();
 
     // 初始化，负责注册回调。传入 GLFWwindow*（非空）
-    bool Init(GLFWwindow* window);
+    bool Init_Inputmgr(GLFWwindow* window);
 
     // 注销回调并清理（在 glfwDestroyWindow 或退出前调用）
     void Shutdown(GLFWwindow* window);
@@ -30,9 +30,11 @@ public:
     bool IsMouseButtonDown(int button) const;
     std::pair<double, double> GetCursorPos() const;
 
+    InputManager();
+    ~InputManager();
+
 private:
-    InputManager() = default;
-    ~InputManager() = default;
+   
 
     // 非静态实例方法：回调转发到这些方法来修改状态
     void OnKey(int key, int scancode, int action, int mods);

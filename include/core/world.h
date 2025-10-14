@@ -8,17 +8,14 @@
 class GameWorld
 {
 public:
-	static GameWorld& Get_Instance() {
-		static GameWorld* world = new GameWorld();
-		return *world;
-	}
+	static GameWorld& Get_Instance();
 
 	void game_on();
 
 	bool Init();
 
-private:
 	GameWorld();
+	~GameWorld();
 
 private:
 	SceneManager scene_mgr;
