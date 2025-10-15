@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "D:\\code\\game\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{C31D3654-7F81-46E4-8373-2C12B8FCAFF9}|game.vcxproj|D:\\code\\game\\src\\core\\world.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C31D3654-7F81-46E4-8373-2C12B8FCAFF9}|game.vcxproj|solutionrelative:src\\core\\world.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C31D3654-7F81-46E4-8373-2C12B8FCAFF9}|game.vcxproj|D:\\code\\game\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C31D3654-7F81-46E4-8373-2C12B8FCAFF9}|game.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C31D3654-7F81-46E4-8373-2C12B8FCAFF9}|game.vcxproj|D:\\code\\game\\src\\core\\InuputManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{C31D3654-7F81-46E4-8373-2C12B8FCAFF9}|game.vcxproj|solutionrelative:src\\core\\InuputManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C31D3654-7F81-46E4-8373-2C12B8FCAFF9}|game.vcxproj|D:\\code\\game\\include\\core\\InuputManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{C31D3654-7F81-46E4-8373-2C12B8FCAFF9}|game.vcxproj|solutionrelative:include\\core\\InuputManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C31D3654-7F81-46E4-8373-2C12B8FCAFF9}|game.vcxproj|D:\\code\\game\\src\\core\\world.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C31D3654-7F81-46E4-8373-2C12B8FCAFF9}|game.vcxproj|solutionrelative:src\\core\\world.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C31D3654-7F81-46E4-8373-2C12B8FCAFF9}|game.vcxproj|D:\\code\\game\\include\\core\\world.h||{8B382828-6202-11D1-8870-0000F87579D2}",
@@ -50,21 +54,20 @@
       "DocumentGroups": [
         {
           "DockedHeight": 292,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "world.h",
               "DocumentMoniker": "D:\\code\\game\\include\\core\\world.h",
               "RelativeDocumentMoniker": "include\\core\\world.h",
-              "ToolTip": "D:\\code\\game\\include\\core\\world.h*",
-              "RelativeToolTip": "include\\core\\world.h*",
+              "ToolTip": "D:\\code\\game\\include\\core\\world.h",
+              "RelativeToolTip": "include\\core\\world.h",
               "ViewState": "AgIAAAIAAAAAAAAAAAAAABEAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-09-27T04:48:02.795Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Bookmark",
@@ -72,46 +75,58 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
+              "Title": "main.cpp",
+              "DocumentMoniker": "D:\\code\\game\\main.cpp",
+              "RelativeDocumentMoniker": "main.cpp",
+              "ToolTip": "D:\\code\\game\\main.cpp",
+              "RelativeToolTip": "main.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-10-14T12:17:21.333Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "world.cpp",
               "DocumentMoniker": "D:\\code\\game\\src\\core\\world.cpp",
               "RelativeDocumentMoniker": "src\\core\\world.cpp",
               "ToolTip": "D:\\code\\game\\src\\core\\world.cpp",
               "RelativeToolTip": "src\\core\\world.cpp",
-              "ViewState": "AgIAACoAAAAAAAAAAAAhwDcAAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAACMAAAAAAAAAAAAgwC4AAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-10-09T04:05:23.796Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "InuputManager.cpp",
               "DocumentMoniker": "D:\\code\\game\\src\\core\\InuputManager.cpp",
               "RelativeDocumentMoniker": "src\\core\\InuputManager.cpp",
-              "ToolTip": "D:\\code\\game\\src\\core\\InuputManager.cpp*",
-              "RelativeToolTip": "src\\core\\InuputManager.cpp*",
-              "ViewState": "AgIAAG0AAAAAAAAAAAAhwHoAAAAbAAAAAAAAAA==",
+              "ToolTip": "D:\\code\\game\\src\\core\\InuputManager.cpp",
+              "RelativeToolTip": "src\\core\\InuputManager.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHMAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-10-08T11:02:36.684Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "InuputManager.h",
               "DocumentMoniker": "D:\\code\\game\\include\\core\\InuputManager.h",
               "RelativeDocumentMoniker": "include\\core\\InuputManager.h",
-              "ToolTip": "D:\\code\\game\\include\\core\\InuputManager.h*",
-              "RelativeToolTip": "include\\core\\InuputManager.h*",
+              "ToolTip": "D:\\code\\game\\include\\core\\InuputManager.h",
+              "RelativeToolTip": "include\\core\\InuputManager.h",
               "ViewState": "AgIAABUAAAAAAAAAAAAAACAAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-09-25T11:45:32.134Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-25T11:45:32.134Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "TransSystem.h",
               "DocumentMoniker": "D:\\code\\game\\include\\ECS\\TransSystem.h",
               "RelativeDocumentMoniker": "include\\ECS\\TransSystem.h",
@@ -123,7 +138,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "ECSManager.h",
               "DocumentMoniker": "D:\\code\\game\\include\\ECS\\ECSManager.h",
               "RelativeDocumentMoniker": "include\\ECS\\ECSManager.h",
@@ -135,7 +150,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "System.h",
               "DocumentMoniker": "D:\\code\\game\\include\\ECS\\System.h",
               "RelativeDocumentMoniker": "include\\ECS\\System.h",
@@ -147,7 +162,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "ComponentStorage.h",
               "DocumentMoniker": "D:\\code\\game\\include\\ECS\\ComponentStorage.h",
               "RelativeDocumentMoniker": "include\\ECS\\ComponentStorage.h",
@@ -159,7 +174,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "Component.h",
               "DocumentMoniker": "D:\\code\\game\\include\\ECS\\Component.h",
               "RelativeDocumentMoniker": "include\\ECS\\Component.h",
@@ -171,7 +186,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "Entity.h",
               "DocumentMoniker": "D:\\code\\game\\include\\ECS\\Entity.h",
               "RelativeDocumentMoniker": "include\\ECS\\Entity.h",

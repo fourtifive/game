@@ -15,7 +15,7 @@ void GameWorld::game_on()
 {
 	//initgraph(1280, 720, EX_SHOWCONSOLE);
 	
-	BeginBatchDraw();
+	//BeginBatchDraw();
 
 	scene_mgr.Switch_Scene(std::make_unique<MenuScene>());
 
@@ -33,7 +33,7 @@ void GameWorld::game_on()
 		FlushBatchDraw();
 	}
 
-	EndBatchDraw();
+	//EndBatchDraw();
 
 }
 
@@ -42,6 +42,7 @@ bool GameWorld::Init() {
 
 	GLFWwindow* window = glfwCreateWindow(800, 600, "Demo", nullptr, nullptr);
 	glfwMakeContextCurrent(window);
+
 
 	input_mgr.Init_Inputmgr(window);
 

@@ -34,11 +34,10 @@ void InputManager::Shutdown(GLFWwindow* window) {
 
 void InputManager::Update(double currentTime) {
     // 更新所有正在按下键的持续时间
-    {
-        //for (auto& [k,st] : keyStates) {
-        //if (st.pressed) st.duration = currentTime - st.downTime;
-        //else st.duration = 0.0;
-    }
+        for(auto& i:keyStates) {
+            if (i.second.pressed) i.second.duration = currentTime - i.second.downTime;
+            else i.second.duration = 0.0;
+        }
 }
 
 // 非静态处理函数（由静态回调转发）

@@ -25,7 +25,7 @@ namespace ECS {
 
 		}
 
-		std::unordered_map<Entity, Component> Get_Comp() {
+		std::unordered_map<Entity, Component>& Get_Comp() {
 			return component;
 		}
 
