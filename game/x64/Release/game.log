@@ -4,8 +4,9 @@ C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared\minwindef.h(1
       D:\code\game\opengl\glfw\include\GLFW\glfw3.h(123,11):
       参见“APIENTRY”的前一个定义
   
+D:\code\game\src\core\world.cpp(32,28): warning C4244: “参数”: 从“float”转换到“DWORD”，可能丢失数据
   正在生成代码
-  3 of 432 functions ( 0.7%) were compiled, the rest were copied from previous compilation.
+  2 of 696 functions ( 0.3%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
     0 functions had inline decision re-evaluated but remain unchanged
   已完成代码的生成

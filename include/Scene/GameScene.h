@@ -1,6 +1,7 @@
 #pragma once
 #include<Scene/GameScene.h>
 #include<core/SceneManager.h>
+#include<ECS/ECSManager.h>
 
 class GameScene:public Scene
 {

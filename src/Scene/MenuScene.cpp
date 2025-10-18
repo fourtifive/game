@@ -19,7 +19,7 @@ void MenuScene::Update(float dt)
 {
 	delta_time += dt;
 	if (delta_time >= 1.f) {
-		scene_mgr->Switch_Scene(std::make_unique<GameScene>());
+		//scene_mgr->Switch_Scene(std::make_unique<GameScene>());
 
 	}
 }

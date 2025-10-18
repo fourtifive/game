@@ -10,8 +10,13 @@ namespace ECS {
 		ECSManager()=default;
 		~ECSManager()=default;
 
+		static ECSManager& Get_Instance() {
+			static ECSManager ECS_mgr;
+			return ECS_mgr;
+		}
+
 		//create entity
-		Entity Create_entity()
+		Entity Create_Entity()
 		{
 			return entity_mgr.Create_Entity();
 
@@ -29,7 +34,7 @@ namespace ECS {
 		}
 
 		//entity add component
-		void Add_Comp(Entity id, Translate& trans) { translate.Add_Comp(id, trans); }
+		void Add_Comp(Entity id, Translate trans) { translate.Add_Comp(id, trans); }
 
 		//entity remove component
 		void Remove_Comp(Entity id) { translate.Remove_Comp(id); }
@@ -45,23 +50,25 @@ namespace ECS {
 		template<typename Func>
 		void Traverse_Eachtrans(Func&& func)
 		{
-			for (auto& [id, comp] : translate.Get_Comp()) {
-				func(id, comp, dt);
+			for (auto& i : translate.Get_Comp()) {
+				func(i.first,i.second);
+				//std::cout << i.second.trans.x << " " << i.second.trans.y<<std::endl;
 			}
 		}
 
 		//update my system
 		void Update(float dt)
 		{
-			system_mgr.Update(*this,dt);
+			system_mgr.Update(dt);
 		}
 
 
 	private:
 		EntityManager entity_mgr;
 		SystemManager system_mgr;
+
 		CompStorage<Translate> translate;
 
-		SystemManager system_mgr;
+		/*ECSManager* ECS_mgr=nullptr;*/
 	};
 }

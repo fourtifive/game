@@ -2,18 +2,19 @@
 #include<ECS/Entity.h>
 #include<memory>
 #include<vector>
+#include<iostream>
 #include<set>
 
-class ECSManager;
-
 namespace ECS {
+	class ECSManager;
+
 	class System
 	{
 	public:
 		System() = default;
 		~System() = default;
 		
-		virtual void Update(ECSManager& ecs_mgr,float dt) = 0;
+		virtual void Update(float dt) = 0;
 
 		//可添加在系统内部Add实体的方法以及remove实体的方法
 
@@ -31,17 +32,17 @@ namespace ECS {
 		template<typename T,typename...Args>
 		T* Register_System(Args&&...arg)
 		{
-			auto system = std::unique_ptr<T>(std::forward<Args>arg...);
-			T* ptr = system.get();
-			systems.push_back(std::move(system));
+			auto sys = std::make_unique<T>(std::forward<Args>(arg)...);
+			T* ptr = sys.get();
+			systems.push_back(std::move(sys));
 			return ptr;
 		}
 
 		//system's update function
-		void Update(ECSManager& mgr, float delta_time)
+		void Update(float delta_time)
 		{
 			for (auto& system : systems)
-				system->Update(mgr,delta_time);
+				system->Update(delta_time);
 		}
 
 

@@ -30,8 +30,8 @@ public:
     bool IsMouseButtonDown(int button) const;
     std::pair<double, double> GetCursorPos() const;
 
-    InputManager();
-    ~InputManager();
+    InputManager()=default;
+    ~InputManager()=default;
 
 private:
    

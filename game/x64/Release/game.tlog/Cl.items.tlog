@@ -1,5 +1,6 @@
 D:\code\game\src\core\InuputManager.cpp;D:\code\game\game\x64\Release\InuputManager.obj
-D:\code\game\src\core\DeltaTimer.cpp;D:\code\game\game\x64\Release\DeltaTimer.obj
+D:\code\game\src\core\Timer.cpp;D:\code\game\game\x64\Release\Timer.obj
+D:\code\game\src\ECS\Player.h;D:\code\game\game\x64\Release\Player.obj
 D:\code\game\src\Scene\GameScene.cpp;D:\code\game\game\x64\Release\GameScene.obj
 D:\code\game\main.cpp;D:\code\game\game\x64\Release\main.obj
 D:\code\game\include\core\SceneManager.h;D:\code\game\game\x64\Release\SceneManager.obj

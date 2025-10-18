@@ -128,7 +128,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\core\InuputManager.cpp" />
-    <ClCompile Include="src\core\DeltaTimer.cpp" />
+    <ClCompile Include="src\core\Timer.cpp" />
+    <ClCompile Include="src\ECS\Player.h" />
     <ClCompile Include="src\Scene\GameScene.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="include\core\SceneManager.h" />

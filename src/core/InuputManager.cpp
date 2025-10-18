@@ -115,10 +115,10 @@ std::pair<double, double> InputManager::GetCursorPos() const {
     return { cursorX, cursorY };
 }
 
-InputManager::InputManager()
-{
-}
-
-InputManager::~InputManager()
-{
-}
+//InputManager::InputManager()
+//{
+//}
+//
+//InputManager::~InputManager()
+//{
+//}

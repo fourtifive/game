@@ -4,6 +4,7 @@
 #include<iostream>
 #include <core/Scene.h>
 #include <Scene/MenuScene.h>
+#include<Scene/GameScene.h>
 
 GameWorld& GameWorld::Get_Instance()
 {
@@ -17,7 +18,7 @@ void GameWorld::game_on()
 	
 	//BeginBatchDraw();
 
-	scene_mgr.Switch_Scene(std::make_unique<MenuScene>());
+	scene_mgr.Switch_Scene(std::make_unique<GameScene>());
 
 	while (!scene_mgr.Is_Empty() && !scene_mgr.Get_current_Scene()->Is_Quit())
 	{
@@ -27,10 +28,9 @@ void GameWorld::game_on()
 
 			//scene_mgr.Render();
 
-
-		cleardevice();
-		
-		FlushBatchDraw();
+		//cleardevice();
+			Sleep(1000/FPS-delta_time);
+		//FlushBatchDraw();
 	}
 
 	//EndBatchDraw();
@@ -50,10 +50,10 @@ bool GameWorld::Init() {
 	return 1;
 }
 
-GameWorld::GameWorld()
-{
-}
-
-GameWorld::~GameWorld()
-{
-}
+//GameWorld::GameWorld()
+//{
+//}
+//
+//GameWorld::~GameWorld()
+//{
+//}

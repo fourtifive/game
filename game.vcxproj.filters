@@ -36,7 +36,7 @@
     <ClCompile Include="include\core\SceneManager.h">
       <Filter>头文件\core</Filter>
     </ClCompile>
-    <ClCompile Include="src\core\DeltaTimer.cpp">
+    <ClCompile Include="src\core\Timer.cpp">
       <Filter>源文件\core</Filter>
     </ClCompile>
     <ClCompile Include="src\core\world.cpp">
@@ -49,6 +49,9 @@
       <Filter>源文件\Scene</Filter>
     </ClCompile>
     <ClCompile Include="src\core\InuputManager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ECS\Player.h">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
