@@ -2,6 +2,7 @@
 #include<Scene/GameScene.h>
 #include<core/SceneManager.h>
 #include<ECS/ECSManager.h>
+#include<ECS/Player.h>
 
 class GameScene:public Scene
 {
@@ -11,5 +12,7 @@ public:
 	void Exit()override;
 	void Enter(SceneManager* mgr)override;
 private:
-	float delta_time=0;
+	//float delta_time=0;
+
+	Player* player=nullptr;
 };

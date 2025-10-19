@@ -9,7 +9,7 @@ class GameWorld
 {
 public:
 	static GameWorld& Get_Instance();
-
+	
 	void game_on();
 
 	bool Init();

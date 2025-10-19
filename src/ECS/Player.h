@@ -4,23 +4,15 @@
 class Player
 {
 public:
-	Player();
-	~Player();
+	
+	void Init() {
+		auto& ecs = ECS::ECSManager::Get_Instance();
 
+		ecs.Create_Entity(PLAYER);
 
+		ecs.Add_Comp(PLAYER, { 0,0 });
+	}
 
 private:
 
 };
-
-inline Player::Player()
-{
-	ECS::ECSManager::Get_Instance().Create_Entity(PLAYER);
-	
-	ECS::ECSManager::Get_Instance().Add_Comp(PLAYER, {0,0});
-}
-
-inline Player::~Player()
-{
-
-}

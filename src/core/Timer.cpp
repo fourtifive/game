@@ -1,36 +1,67 @@
 #include <core/Timer.h>
 #include<iostream>
+#include<graphics.h>
 
-
-Timer::Timer()
+void Timer::Init()
 {
-    last_time = std::chrono::high_resolution_clock::now();
+    frame_start = std::chrono::high_resolution_clock::now();
 }
 
-float Timer::Updata()
+//float Timer::Updata()
+//{
+//    auto current_time=std::chrono::high_resolution_clock::now();
+//    std::chrono::duration<float>diff =  current_time-last_time;
+//    delta_time = diff.count();
+//    last_time = current_time;
+//    return delta_time;
+//}
+
+void Timer::Start_Frame() 
 {
-    auto current_time=std::chrono::high_resolution_clock::now();
-    std::chrono::duration<float>diff =  current_time-last_time;
-    delta_time = diff.count();
-    last_time = current_time;
-    if (framecount > 1)
-    {
-        std::cout << "FPS:"<<fps<<" "<<delta_time<<std::endl;
-        framecount = 0, fps = 0;
+    frame_start = std::chrono::high_resolution_clock::now();
+   
+}
+
+void Timer::End_frame()
+{
+    auto frame_end = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<float>diff = frame_end - frame_start;
+    float frameduration = diff.count();
+    delta_time = frameduration;
+    float sleeptime = FRAMEDURATION*1000 - frameduration*1000;
+   
+    if (sleeptime >= 0) {
+        Sleep(sleeptime);
+        duration += FRAMEDURATION;
+        count++;
+        //std::cout << count<<" :"<<duration<<","<<frameduration*1000<<","<<sleeptime<< std::endl;
+        if (count == 144)count = 0;
     }
-    fps += 1;
-    framecount += delta_time;
-    return delta_time;
+    else duration += delta_time;
+    
+    fps++;
+
+    if (duration >= 1.0f||fps==144)
+    {
+        std::cout << "FPS:" << fps << " " << delta_time*1000 << " " << duration<<" " <<sleeptime<< std::endl;
+        duration = 0.0f, fps = 0;
+    }
+
 }
 
-float Timer::Get_Delta() const
+float Timer::Get_Delta() const 
 {
+  /*  auto current_time = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<float>diff = current_time - last_time;
+    delta_time = diff.count();
+    last_time = current_time;*/
+
     return delta_time;
 }
 
 float Timer::Get_framecount() const
 {
-    return framecount;
+    return duration;
 }
 
 float Timer::Get_fps() const
@@ -40,6 +71,6 @@ float Timer::Get_fps() const
 
 void Timer::Reset()
 {
-    last_time = std::chrono::high_resolution_clock::now();
+    frame_start = std::chrono::high_resolution_clock::now();
     delta_time = 0;
 }

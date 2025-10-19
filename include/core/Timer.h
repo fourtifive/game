@@ -1,11 +1,17 @@
 #pragma once
 #include<chrono>
-const unsigned int FPS = 144;
+const float FPS =144;
+const float FRAMEDURATION = 1.0f / FPS;
 class Timer
 {
 public:
-	Timer();
-	float Updata();
+	Timer()=default;
+	//float Updata();
+	void Init();
+
+	void Start_Frame();
+
+	void End_frame();
 
 	float Get_Delta() const;
 
@@ -15,8 +21,10 @@ public:
 
 	void Reset();
 private:
-	std::chrono::high_resolution_clock::time_point last_time;
-	float delta_time;
-	unsigned int fps = 0;
-	float framecount = 0;
+	/*std::chrono::high_resolution_clock::time_point last_time;*/
+	float delta_time=0.0f;
+	unsigned int fps = 1;
+	float duration = 0.0f;
+	int count = 0;
+	std::chrono::high_resolution_clock::time_point frame_start;
 };

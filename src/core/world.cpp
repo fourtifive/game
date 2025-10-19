@@ -22,15 +22,16 @@ void GameWorld::game_on()
 
 	while (!scene_mgr.Is_Empty() && !scene_mgr.Get_current_Scene()->Is_Quit())
 	{
-			float delta_time = timer.Updata();
+			timer.Start_Frame();
 			
-			scene_mgr.Update(delta_time);
+
+			scene_mgr.Update(timer.Get_Delta());
 
 			//scene_mgr.Render();
 
-		//cleardevice();
-			Sleep(1000/FPS-delta_time);
-		//FlushBatchDraw();
+			
+			timer.End_frame();
+		
 	}
 
 	//EndBatchDraw();
@@ -46,6 +47,7 @@ bool GameWorld::Init() {
 
 	input_mgr.Init_Inputmgr(window);
 
+	timer.Init();
 
 	return 1;
 }
