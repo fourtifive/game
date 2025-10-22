@@ -3,6 +3,7 @@
 #include <unordered_set>
 #include <utility>
 #include <glfw3.h>
+#include<iostream>
 
 struct InputState {
     bool pressed = false;
@@ -12,7 +13,7 @@ struct InputState {
 
 class InputManager {
 public:
-    static InputManager& Instance();
+    static InputManager& Get_Instance();
 
     // 初始化，负责注册回调。传入 GLFWwindow*（非空）
     bool Init_Inputmgr(GLFWwindow* window);

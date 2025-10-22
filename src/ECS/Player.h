@@ -11,6 +11,7 @@ public:
 		ecs.Create_Entity(PLAYER);
 
 		ecs.Add_Comp(PLAYER, { 0,0 });
+
 	}
 
 private:

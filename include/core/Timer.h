@@ -17,7 +17,7 @@ public:
 
 	float Get_framecount()const;
 
-	float Get_fps()const;
+	unsigned int Get_fps()const;
 
 	void Reset();
 private:

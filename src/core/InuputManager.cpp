@@ -1,14 +1,25 @@
 #include "core/InuputManager.h"
 
-InputManager& InputManager::Instance() {
+InputManager& InputManager::Get_Instance() {
     static InputManager inst;
     return inst;
 }
 
 bool InputManager::Init_Inputmgr(GLFWwindow* window) {
-    if (!window) return 1;
+    std::cout << "Initializing InputManager..." << std::endl;
+    if (!window) {
+        std::cout << "ERROR: Window is null!" << std::endl;
+        return false;
+    }
     // 把 this 绑定到 window 的 user pointer，回调中取回
     glfwSetWindowUserPointer(window, this);
+    void* ptr = glfwGetWindowUserPointer(window);
+    if (ptr == this) {
+        std::cout << "User pointer set successfully" << std::endl;
+    }
+    else {
+        std::cout << "ERROR: Failed to set user pointer" << std::endl;
+    }
 
     // 注册回调（可以在这里注册所有你需要的回调）
     glfwSetKeyCallback(window, KeyCallback);
@@ -34,15 +45,17 @@ void InputManager::Shutdown(GLFWwindow* window) {
 
 void InputManager::Update(double currentTime) {
     // 更新所有正在按下键的持续时间
-        for(auto& i:keyStates) {
+        glfwPollEvents();
+       /* for(auto& i:keyStates) {
             if (i.second.pressed) i.second.duration = currentTime - i.second.downTime;
             else i.second.duration = 0.0;
-        }
+        }*/
 }
 
 // 非静态处理函数（由静态回调转发）
 void InputManager::OnKey(int key, int scancode, int action, int mods) {
     double now = glfwGetTime();
+	std::cout << "Key Event: key=" << key << " action=" << action << std::endl;
     if (action == GLFW_PRESS) {
         auto& s = keyStates[key];
         s.pressed = true;
@@ -82,6 +95,12 @@ void InputManager::OnScroll(double xoffset, double yoffset) {
 // 静态回调：取回 window 的 user pointer 转发给实例
 void InputManager::KeyCallback(GLFWwindow* window, int key, int scancode, int action, int mods) {
     void* ptr = glfwGetWindowUserPointer(window);
+    if (ptr) {
+        std::cout << "User pointer found, calling OnKey..." << std::endl;
+    }
+    else {
+        std::cout << "ERROR: User pointer is null!" << std::endl;
+    }
     if (ptr) reinterpret_cast<InputManager*>(ptr)->OnKey(key, scancode, action, mods);
 }
 void InputManager::MouseButtonCallback(GLFWwindow* window, int button, int action, int mods) {
@@ -100,6 +119,7 @@ void InputManager::ScrollCallback(GLFWwindow* window, double xoffset, double yof
 // 读取状态的简单实现
 bool InputManager::IsKeyDown(int key) const {
     auto it = keyStates.find(key);
+	//std::cout << "pressed" << std::endl;
     return it != keyStates.end() && it->second.pressed;
 }
 double InputManager::GetKeyDownDuration(int key, double currentTime) const {

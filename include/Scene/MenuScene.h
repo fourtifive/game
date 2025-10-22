@@ -1,6 +1,5 @@
 #pragma once
 #include<core/SceneManager.h>
-#include<Scene/MenuScene.h>
 
 class MenuScene:public Scene
 {

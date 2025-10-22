@@ -1,6 +1,4 @@
 #include <Scene/GameScene.h>
-#include<core/SceneManager.h>
-#include<Scene/MenuScene.h>
 #include<iostream>
 #include<ECS/TransSystem.h>
 
@@ -9,7 +7,7 @@ void GameScene::Enter(SceneManager* mgr)
 {
 	scene_mgr = mgr;
 	ECS::ECSManager::Get_Instance().Register_System<ECS::TransSystem>();
-	/*std::cout << "Enter GameScene" << std::endl;*/
+	std::cout << "Enter GameScene" << std::endl;
 
 	player = new Player();
 	player->Init();

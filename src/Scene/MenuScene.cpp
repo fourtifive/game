@@ -1,6 +1,4 @@
 #include <Scene/MenuScene.h>
-#include<core/SceneManager.h>
-#include<Scene/GameScene.h>
 #include<iostream>
 
 void MenuScene::Enter(SceneManager* mgr)
@@ -17,11 +15,11 @@ void MenuScene::Exit()
 
 void MenuScene::Update(float dt)
 {
-	delta_time += dt;
-	if (delta_time >= 1.f) {
-		//scene_mgr->Switch_Scene(std::make_unique<GameScene>());
+	//delta_time += dt;
+	//if (delta_time >= 1.f) {
+	//	//scene_mgr->Switch_Scene(std::make_unique<GameScene>());
 
-	}
+	//}
 }
 void MenuScene::Render()
 {

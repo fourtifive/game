@@ -2,9 +2,9 @@
 #include<core/world.h>
 #include<graphics.h>
 #include<iostream>
-#include <core/Scene.h>
 #include <Scene/MenuScene.h>
 #include<Scene/GameScene.h>
+
 
 GameWorld& GameWorld::Get_Instance()
 {
@@ -18,20 +18,24 @@ void GameWorld::game_on()
 	
 	//BeginBatchDraw();
 
-	scene_mgr.Switch_Scene(std::make_unique<GameScene>());
+	/*scene_mgr.Switch_Scene(std::make_unique<GameScene>());*/
 
 	while (!scene_mgr.Is_Empty() && !scene_mgr.Get_current_Scene()->Is_Quit())
 	{
+		
+		// 添加window有效性检查
+
+
 			timer.Start_Frame();
 			
+			input_mgr.Update(timer.Get_Delta());
 
 			scene_mgr.Update(timer.Get_Delta());
 
 			//scene_mgr.Render();
 
-			
 			timer.End_frame();
-		
+			
 	}
 
 	//EndBatchDraw();
@@ -41,13 +45,14 @@ void GameWorld::game_on()
 bool GameWorld::Init() {
 	glfwInit();
 
-	GLFWwindow* window = glfwCreateWindow(800, 600, "Demo", nullptr, nullptr);
+	window = glfwCreateWindow(800, 600, "Demo", nullptr, nullptr);
 	glfwMakeContextCurrent(window);
 
-
 	input_mgr.Init_Inputmgr(window);
-
 	timer.Init();
+
+	scene_mgr.Init(std::make_unique<GameScene>());
+
 
 	return 1;
 }

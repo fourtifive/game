@@ -1,6 +1,7 @@
 #include <core/Timer.h>
 #include<iostream>
 #include<graphics.h>
+#include<glfw3.h>
 
 void Timer::Init()
 {
@@ -18,8 +19,9 @@ void Timer::Init()
 
 void Timer::Start_Frame() 
 {
+
     frame_start = std::chrono::high_resolution_clock::now();
-   
+    //glfwPollEvents();
 }
 
 void Timer::End_frame()
@@ -46,7 +48,7 @@ void Timer::End_frame()
         std::cout << "FPS:" << fps << " " << delta_time*1000 << " " << duration<<" " <<sleeptime<< std::endl;
         duration = 0.0f, fps = 0;
     }
-
+    
 }
 
 float Timer::Get_Delta() const 
@@ -64,7 +66,7 @@ float Timer::Get_framecount() const
     return duration;
 }
 
-float Timer::Get_fps() const
+unsigned int Timer::Get_fps() const
 {
     return fps;
 }

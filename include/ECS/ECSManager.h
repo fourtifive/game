@@ -2,6 +2,7 @@
 
 #include<ECS/System.h>
 #include<ECS/ComponentStorage.h>
+#include<core/InuputManager.h>
 
 namespace ECS {
 	class ECSManager
@@ -51,8 +52,8 @@ namespace ECS {
 		void Traverse_Eachtrans(Func&& func)
 		{
 			for (auto& i : translate.Get_Comp()) {
-				func(i.first,i.second);
-				//std::cout << i.second.trans.x << " " << i.second.trans.y<<std::endl;
+				func(i.first,i.second,input_mgr);
+				std::cout << i.second.position.x << " " << i.second.position.y <<std::endl;
 			}
 		}
 
@@ -67,8 +68,10 @@ namespace ECS {
 		EntityManager entity_mgr;
 		SystemManager system_mgr;
 
+		InputManager& input_mgr = InputManager::Get_Instance();
+
 		CompStorage<Translate> translate;
 
-		/*ECSManager* ECS_mgr=nullptr;*/
+		
 	};
 }

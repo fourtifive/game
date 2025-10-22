@@ -1,10 +1,19 @@
 #pragma once
 #include<memory>
 #include"Scene.h"
+#include<Scene/GameScene.h>
+#include<Scene/MenuScene.h>
+
 
 class SceneManager
 {
 public:
+	void Init(std::unique_ptr<Scene> scene)
+	{
+		current_scene = std::move(scene);
+		current_scene->Enter(this);
+	}
+
 	void Switch_Scene(std::unique_ptr<Scene> scene)
 	{
 		if(current_scene)current_scene->Exit();

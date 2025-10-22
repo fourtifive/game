@@ -4,7 +4,7 @@
 namespace ECS {
 	struct Translate
 	{
-		Point trans;
+		Point position;
 	};
 	
 

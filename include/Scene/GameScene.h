@@ -1,7 +1,7 @@
 #pragma once
-#include<Scene/GameScene.h>
 #include<core/SceneManager.h>
 #include<ECS/ECSManager.h>
+#include<core/Scene.h>
 #include<ECS/Player.h>
 
 class GameScene:public Scene
