@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\core\ResourceManager.cpp" />
     <ClCompile Include="src\core\InuputManager.cpp" />
     <ClCompile Include="src\core\Timer.cpp" />
     <ClCompile Include="src\ECS\Player.h" />
@@ -139,6 +140,7 @@
   <ItemGroup>
     <ClInclude Include="include\core\InuputManager.h" />
     <ClInclude Include="include\core\Math.h" />
+    <ClInclude Include="include\core\ResourceManager.h" />
     <ClInclude Include="include\ECS\Component.h" />
     <ClInclude Include="include\ECS\ComponentStorage.h" />
     <ClInclude Include="include\ECS\Entity.h" />
