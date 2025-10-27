@@ -1,7 +1,8 @@
 #pragma once
 
+#include"ResourceManager.h"
 #include"SceneManager.h"
-#include<glfw3.h>
+
 #include"Timer.h"
 #include<ECS/ECSManager.h>
 
@@ -20,6 +21,8 @@ public:
 private:
 	SceneManager scene_mgr;
 	InputManager& input_mgr=InputManager::Get_Instance();
+	ResourceManager& resource_mgr = ResourceManager::Get_Instance();
+
 	/*ECS::ECSManager& ecs_mgr = ECS::ECSManager::Get_Instance();*/
 	GLFWwindow* window=nullptr;
 	Timer timer;

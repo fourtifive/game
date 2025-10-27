@@ -15,7 +15,7 @@ bool InputManager::Init_Inputmgr(GLFWwindow* window) {
     glfwSetWindowUserPointer(window, this);
     void* ptr = glfwGetWindowUserPointer(window);
     if (ptr == this) {
-        std::cout << "User pointer set successfully" << std::endl;
+        std::cout << "User pointer set successfully..." << std::endl;
     }
     else {
         std::cout << "ERROR: Failed to set user pointer" << std::endl;

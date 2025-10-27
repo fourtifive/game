@@ -52,11 +52,15 @@ bool GameWorld::Init() {
 	window = glfwCreateWindow(800, 600, "Demo", nullptr, nullptr);
 	glfwMakeContextCurrent(window);
 
+	glewInit();
+
 	input_mgr.Init_Inputmgr(window);
+
 	timer.Init();
 
-	scene_mgr.Init(std::make_unique<GameScene>());
+	resource_mgr.Init();
 
+	scene_mgr.Init(std::make_unique<GameScene>());
 
 	return 1;
 }

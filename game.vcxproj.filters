@@ -57,6 +57,12 @@
     <ClCompile Include="src\core\ResourceManager.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="opengl\stb_image.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\Render.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\core\world.h">
@@ -99,6 +105,12 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="include\core\ResourceManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="opengl\stb_image.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="include\core\Render.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

@@ -53,7 +53,7 @@ namespace ECS {
 		{
 			for (auto& i : translate.Get_Comp()) {
 				func(i.first,i.second,input_mgr);
-				std::cout << i.second.position.x << " " << i.second.position.y <<std::endl;
+				//std::cout << i.second.position.x << " " << i.second.position.y <<std::endl;
 			}
 		}
 

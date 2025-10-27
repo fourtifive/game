@@ -1,10 +1,11 @@
 #pragma once
+#include<glew.h>
 #include<glfw3.h>
+#include<stb_image.h>
 #include<memory>
 #include<unordered_map>
 #include<string>
-#include<glew.h>
-#include<stb_image.h>
+#include<iostream>
 
 // OpenGLÎÆÀíÉ¾³ýÆ÷
 struct GLTextureDeleter {
@@ -35,7 +36,7 @@ public:
 
 	void Clear();
 
-	void Load_Texture(const std::string& textureid, const std::string& filePath);
+	bool Load_Texture(const std::string& textureid, const std::string& filepath);
 
 	GLTexturePtr& Get_Texture(const std::string& name);
 

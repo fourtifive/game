@@ -3,13 +3,14 @@
 #include"Scene.h"
 #include<Scene/GameScene.h>
 #include<Scene/MenuScene.h>
-
+#include<iostream>
 
 class SceneManager
 {
 public:
 	void Init(std::unique_ptr<Scene> scene)
 	{
+		std::cout << "SceneManager Init..." << std::endl;
 		current_scene = std::move(scene);
 		current_scene->Enter(this);
 	}

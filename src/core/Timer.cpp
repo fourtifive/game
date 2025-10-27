@@ -5,6 +5,7 @@
 
 void Timer::Init()
 {
+	std::cout << "Timer Init..." << std::endl;
     frame_start = std::chrono::high_resolution_clock::now();
 }
 
