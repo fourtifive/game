@@ -128,9 +128,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="opengl\stb_image.cpp" />
-    <ClCompile Include="src\core\Render.cpp" />
+    <ClCompile Include="src\core\RenderSystem.cpp" />
     <ClCompile Include="src\core\ResourceManager.cpp" />
     <ClCompile Include="src\core\InuputManager.cpp" />
+    <ClCompile Include="src\core\Sprite.cpp" />
     <ClCompile Include="src\core\Timer.cpp" />
     <ClCompile Include="src\ECS\Player.h" />
     <ClCompile Include="src\Scene\GameScene.cpp" />
@@ -142,8 +143,9 @@
   <ItemGroup>
     <ClInclude Include="include\core\InuputManager.h" />
     <ClInclude Include="include\core\Math.h" />
-    <ClInclude Include="include\core\Render.h" />
+    <ClInclude Include="include\core\RenderSystem.h" />
     <ClInclude Include="include\core\ResourceManager.h" />
+    <ClInclude Include="include\core\Sprite.h" />
     <ClInclude Include="include\ECS\Component.h" />
     <ClInclude Include="include\ECS\ComponentStorage.h" />
     <ClInclude Include="include\ECS\Entity.h" />

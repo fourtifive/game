@@ -6,8 +6,10 @@ d:\code\game\game\x64\release\main.obj
 d:\code\game\game\x64\release\gamescene.obj
 d:\code\game\game\x64\release\player.obj
 d:\code\game\game\x64\release\timer.obj
+d:\code\game\game\x64\release\sprite.obj
 d:\code\game\game\x64\release\inuputmanager.obj
 d:\code\game\game\x64\release\resourcemanager.obj
+d:\code\game\game\x64\release\render.obj
 d:\code\game\game\x64\release\stb_image.obj
 d:\code\game\x64\release\game.exe
 d:\code\game\x64\release\game.pdb

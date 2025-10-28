@@ -1,6 +1,8 @@
 ﻿  stb_image.cpp
+  RenderSystem.cpp
   ResourceManager.cpp
   InuputManager.cpp
+  Sprite.cpp
   Timer.cpp
 D:\code\game\src\core\Timer.cpp(37,15): warning C4244: “参数”: 从“float”转换到“DWORD”，可能丢失数据
   Player.h
@@ -19,7 +21,7 @@ LINK : warning LNK4098: 默认库“LIBCMT”与其他库的使用冲突；请�
   Previous IPDB not found, fall back to full compilation.
 D:\code\game\include\core\SceneManager.h(28): warning C4715: “SceneManager::Is_Empty”: 不是所有的控件路径都返回值
 D:\code\game\src\core\InuputManager.cpp(29): warning C4715: “InputManager::Init_Inputmgr”: 不是所有的控件路径都返回值
-  All 1088 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  All 1289 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
   已完成代码的生成
 glew32s.lib(glew.obj) : warning LNK4099: 未找到 PDB“vc120.pdb”(使用“glew32s.lib(glew.obj)”或在“D:\code\game\x64\Release\vc120.pdb”中寻找)；正在链接对象，如同没有调试信息一样
   game.vcxproj -> D:\code\game\x64\Release\game.exe

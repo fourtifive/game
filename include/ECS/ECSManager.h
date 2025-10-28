@@ -36,9 +36,13 @@ namespace ECS {
 
 		//entity add component
 		void Add_Comp(Entity id, Translate trans) { translate.Add_Comp(id, trans); }
+		void Add_Comp(Entity id, Renderable render) { renderable.Add_Comp(id, render); }
+
 
 		//entity remove component
 		void Remove_Comp(Entity id) { translate.Remove_Comp(id); }
+		void Remove_Comp_Renderable(Entity id) { renderable.Remove_Comp(id); }
+
 
 		//register system
 		template<typename T,typename...Args>
@@ -71,7 +75,7 @@ namespace ECS {
 		InputManager& input_mgr = InputManager::Get_Instance();
 
 		CompStorage<Translate> translate;
-
+		CompStorage<Renderable> renderable;
 		
 	};
 }

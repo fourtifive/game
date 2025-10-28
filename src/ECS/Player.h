@@ -1,5 +1,6 @@
 #pragma
 #include<ECS/ECSManager.h>
+#include<ECS/Component.h>
 
 class Player
 {
@@ -12,6 +13,8 @@ public:
 
 		ecs.Add_Comp(PLAYER, { 0,0 });
 
+		ECS::Renderable walking_sprite(ECS::RenderType::Sprite,"player_walking",0,0,128,128);
+		ecs.Add_Comp(PLAYER, walking_sprite);
 	}
 
 private:
