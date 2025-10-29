@@ -60,10 +60,7 @@
     <ClCompile Include="opengl\stb_image.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="src\core\RenderSystem.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="src\core\Sprite.cpp">
+    <ClCompile Include="src\core\RenderManager.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -113,7 +110,7 @@
     <ClInclude Include="opengl\stb_image.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="include\core\RenderSystem.h">
+    <ClInclude Include="include\core\RenderManager.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="include\core\Sprite.h">

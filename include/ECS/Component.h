@@ -17,11 +17,11 @@ namespace ECS {
 		Renderable() 
 		{}
 		Renderable(RenderType t, std::string id, int x, int y, int width, int height) :
-			type(t), spriteId(id), srcX(x), srcY(y), srcWidth(width), srcHeight(height)
+			type(t), Id(id), srcX(x), srcY(y), srcWidth(width), srcHeight(height)
 		{}
 
 		RenderType type;          // render type
-		std::string spriteId;     // ID of the sprite/image to render
+		std::string Id;     // ID of the sprite/image to render
 		
 		//sprite specific
 		int srcX = 0;

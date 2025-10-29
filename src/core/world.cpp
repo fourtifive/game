@@ -32,7 +32,7 @@ void GameWorld::game_on()
 
 			scene_mgr.Update(timer.Get_Delta());
 
-			//scene_mgr.Render();
+			scene_mgr.Render();
 
 			timer.End_frame();
 			

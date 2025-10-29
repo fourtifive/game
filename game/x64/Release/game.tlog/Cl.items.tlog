@@ -1,8 +1,7 @@
 D:\code\game\opengl\stb_image.cpp;D:\code\game\game\x64\Release\stb_image.obj
-D:\code\game\src\core\RenderSystem.cpp;D:\code\game\game\x64\Release\RenderSystem.obj
+D:\code\game\src\core\RenderManager.cpp;D:\code\game\game\x64\Release\RenderManager.obj
 D:\code\game\src\core\ResourceManager.cpp;D:\code\game\game\x64\Release\ResourceManager.obj
 D:\code\game\src\core\InuputManager.cpp;D:\code\game\game\x64\Release\InuputManager.obj
-D:\code\game\src\core\Sprite.cpp;D:\code\game\game\x64\Release\Sprite.obj
 D:\code\game\src\core\Timer.cpp;D:\code\game\game\x64\Release\Timer.obj
 D:\code\game\src\ECS\Player.h;D:\code\game\game\x64\Release\Player.obj
 D:\code\game\src\Scene\GameScene.cpp;D:\code\game\game\x64\Release\GameScene.obj

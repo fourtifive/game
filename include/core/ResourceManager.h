@@ -1,5 +1,4 @@
 #pragma once
-#include<glew.h>
 #include "Sprite.h"
 #include<stb_image.h>
 #include<memory>
@@ -50,7 +49,7 @@ public:
 	void Clear();
 
 	bool Load_Texture(const std::string& textureid, const std::string& filepath);
-	GLTexturePtr& Get_Texture(const std::string& tetureid);
+	GLuint* Get_Texture(const std::string& tetureid);
 
 	bool Load_Sprite(const std::string& spriteid, const std::string& filepath, int width, int height);
 	Sprite* Get_Sprite(const std::string& spriteid);

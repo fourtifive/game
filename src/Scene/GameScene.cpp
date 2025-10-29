@@ -29,8 +29,8 @@ void GameScene::Update(float dt)
 }
 void GameScene::Render()
 {
-
-	/*std::cout << "Render" << std::endl;*/
+	//ECS::ECSManager::Get_Instance().
+	
 }
 
 

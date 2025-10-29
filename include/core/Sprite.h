@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include<glew.h>
 #include<glfw3.h>
 
 class Sprite {

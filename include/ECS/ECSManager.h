@@ -38,6 +38,9 @@ namespace ECS {
 		void Add_Comp(Entity id, Translate trans) { translate.Add_Comp(id, trans); }
 		void Add_Comp(Entity id, Renderable render) { renderable.Add_Comp(id, render); }
 
+		//get component
+		CompStorage<Translate>& Get_Comp_Translate() { return translate; }
+		CompStorage<Renderable>& Get_Comp_Renderable() { return renderable; }
 
 		//entity remove component
 		void Remove_Comp(Entity id) { translate.Remove_Comp(id); }

@@ -73,13 +73,12 @@ bool ResourceManager::Load_Texture(const std::string& textureid, const std::stri
     return true;
 }
 
-GLTexturePtr& ResourceManager::Get_Texture(const std::string& textureid)
+GLuint* ResourceManager::Get_Texture(const std::string& textureid)
 {
-    static GLTexturePtr nullTexture = nullptr; // Define a static variable to return a reference
     if (textures.find(textureid) == textures.end()) {
-        return nullTexture;
+        return nullptr;
     }
-    return textures[textureid];
+    return textures[textureid].get();
 }
 
 bool ResourceManager::Load_Sprite(const std::string& spriteid, const std::string& filepath, int w, int h) {
