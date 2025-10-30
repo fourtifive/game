@@ -37,7 +37,6 @@ public:
 
 private:
    
-
     // 非静态实例方法：回调转发到这些方法来修改状态
     void OnKey(int key, int scancode, int action, int mods);
     void OnMouseButton(int button, int action, int mods);

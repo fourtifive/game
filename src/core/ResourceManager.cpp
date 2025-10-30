@@ -4,8 +4,8 @@ bool ResourceManager::Init()
 {
 	std::cout << "Initializing ResourceManager..." << std::endl;
 
-	if(Load_Sprite("player_walking","D:/code/game/assert/Samurai/Walk.png",128,128))std::cout<<"Loaded texture successfully : player" << std::endl;
-	else std::cout << "Failed to load texture : player" << std::endl;
+	if(Load_Texture("player_walking","D:/code/game/assert/Samurai/Walk.png"))std::cout<<"Loaded texture successfully : player_waking" << std::endl;
+	else std::cout << "Failed to load texture : player_waking" << std::endl;
 
 	return true;
 }
@@ -16,7 +16,8 @@ void ResourceManager::Clear()
         if (pair.second && *(pair.second)) {
             glDeleteTextures(1, pair.second.get());
         }
-	}*///should be deleted by smartptr automatically
+	}*/
+    //should be deleted by smartptr automatically
     std::cout << "Cleaning up " << textures.size() << " textures" << std::endl;
 
     glFinish();
@@ -39,7 +40,7 @@ bool ResourceManager::Load_Texture(const std::string& textureid, const std::stri
 
     unsigned char* data = stbi_load(filepath.c_str(), &width, &height, &Channels, 0);
     if (!data) {
-		std::cout << "Failed to load texture: " << filepath << std::endl;
+		std::cout << "Failed to load texture: " << textureid << std::endl;
         return false;
     }
 
@@ -81,45 +82,8 @@ GLuint* ResourceManager::Get_Texture(const std::string& textureid)
     return textures[textureid].get();
 }
 
-bool ResourceManager::Load_Sprite(const std::string& spriteid, const std::string& filepath, int w, int h) {
-    if (sprites.find(spriteid) != sprites.end()) {
-        std::cout << "Sprite ID already exists: " << spriteid << std::endl;
-        return false;
-    }
-
-    int width, height, channels;
-    stbi_set_flip_vertically_on_load(true);
-    unsigned char* data = stbi_load(filepath.c_str(), &width, &height, &channels, 0);
-    if (!data) {
-        std::cout << "Failed to load sprite: " << filepath << std::endl;
-        return false;
-    }
-
-    GLuint texture;
-    glGenTextures(1, &texture);
-    glBindTexture(GL_TEXTURE_2D, texture);
-
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-
-    GLenum format = (channels == 4) ? GL_RGBA : GL_RGB;
-    glTexImage2D(GL_TEXTURE_2D, 0, format, width, height, 0, format, GL_UNSIGNED_BYTE, data);
-    glGenerateMipmap(GL_TEXTURE_2D);
-
-    stbi_image_free(data);
-
-    sprites[spriteid] = SpritePtr(new Sprite(texture, w, h));
-  
-    std::cout << "Loaded sprite: " << spriteid << " (" << width << "x" << height <<","<<w<<"x"<<h << ")" << std::endl;
-
-    return true;
-}
-
-Sprite* ResourceManager::Get_Sprite(const std::string& spriteid) {
-    if (sprites.find(spriteid) == sprites.end()) {
-        return nullptr;
-    }
-    return sprites[spriteid].get();
+GLuint* ResourceManager::Get_Sprite(const std::string& spriteid, int x, int y, int width, int height)
+{
+	// For simplicity, we assume sprites are stored as separate textures in this example.
+    return nullptr;
 }

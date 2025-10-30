@@ -2,7 +2,7 @@
 
 #include"ResourceManager.h"
 #include"SceneManager.h"
-
+#include"RenderManager.h"
 #include"Timer.h"
 #include<ECS/ECSManager.h>
 
@@ -22,6 +22,7 @@ private:
 	SceneManager scene_mgr;
 	InputManager& input_mgr=InputManager::Get_Instance();
 	ResourceManager& resource_mgr = ResourceManager::Get_Instance();
+	RenderManager& render_mgr = RenderManager::Get_Instance();
 
 	/*ECS::ECSManager& ecs_mgr = ECS::ECSManager::Get_Instance();*/
 	GLFWwindow* window=nullptr;

@@ -113,7 +113,7 @@
     <ClInclude Include="include\core\RenderManager.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="include\core\Sprite.h">
+    <ClInclude Include="include\ECS\SpriteAnimationSystem.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

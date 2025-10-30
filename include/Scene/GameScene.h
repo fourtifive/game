@@ -3,16 +3,17 @@
 #include<ECS/ECSManager.h>
 #include<core/Scene.h>
 #include<ECS/Player.h>
+#include<core/RenderManager.h>
 
 class GameScene:public Scene
 {
 public:
-	void Update(float delta_time)override;
-	void Render()override;
-	void Exit()override;
-	void Enter(SceneManager* mgr)override;
+	void Update(float delta_time) override;
+	void Render() override;
+	void Exit() override;
+	void Enter(SceneManager* scene_mgr) override; // Ensure parameter name matches base class declaration
 private:
-	//float delta_time=0;
-
-	Player* player=nullptr;
+	ECS::ECSManager* ecs = nullptr;
+	Player* player = nullptr;
+	RenderManager* render_mgr = nullptr;
 };

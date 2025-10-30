@@ -6,7 +6,11 @@
 void GameScene::Enter(SceneManager* mgr)
 {
 	scene_mgr = mgr;
-	ECS::ECSManager::Get_Instance().Register_System<ECS::TransSystem>();
+	render_mgr = &RenderManager::Get_Instance();
+	ecs = &ECS::ECSManager::Get_Instance();
+
+	ecs->Register_System<ECS::TransSystem>();
+
 	std::cout << "Enter GameScene" << std::endl;
 
 	player = new Player();
@@ -23,14 +27,13 @@ void GameScene::Update(float dt)
 	/*delta_time += dt;
 	if (delta_time >= 1.f) {*/
 		//scene_mgr->Switch_Scene(std::make_unique<MenuScene>());
-	ECS::ECSManager::Get_Instance().Update(dt);
+	ecs->Update(dt);
 		
 	//}
 }
 void GameScene::Render()
 {
-	//ECS::ECSManager::Get_Instance().
-	
+	render_mgr->Render();
 }
 
 

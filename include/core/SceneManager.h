@@ -10,7 +10,7 @@ class SceneManager
 public:
 	void Init(std::unique_ptr<Scene> scene)
 	{
-		std::cout << "SceneManager Init..." << std::endl;
+		std::cout << "Initializing SceneManager..." << std::endl;
 		current_scene = std::move(scene);
 		current_scene->Enter(this);
 	}
