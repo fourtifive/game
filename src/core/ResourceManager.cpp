@@ -4,7 +4,7 @@ bool ResourceManager::Init()
 {
 	std::cout << "Initializing ResourceManager..." << std::endl;
 
-	if(Load_Texture("player_walking","D:/code/game/assert/Samurai/Walk.png"))std::cout<<"Loaded texture successfully : player_waking" << std::endl;
+	if(Load_Texture("player_walking","assert/Samurai/Walk.png"))std::cout<<"Loaded texture successfully : player_waking" << std::endl;
 	else std::cout << "Failed to load texture : player_waking" << std::endl;
 
 	return true;
@@ -12,12 +12,7 @@ bool ResourceManager::Init()
 
 void ResourceManager::Clear()
 {
-    /*for (auto& pair : textures) {
-        if (pair.second && *(pair.second)) {
-            glDeleteTextures(1, pair.second.get());
-        }
-	}*/
-    //should be deleted by smartptr automatically
+    
     std::cout << "Cleaning up " << textures.size() << " textures" << std::endl;
 
     glFinish();

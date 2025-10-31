@@ -2,6 +2,7 @@
 #include<iostream>
 #include<graphics.h>
 #include<glfw3.h>
+#include<thread>
 
 void Timer::Init()
 {
@@ -9,56 +10,40 @@ void Timer::Init()
     frame_start = std::chrono::high_resolution_clock::now();
 }
 
-//float Timer::Updata()
-//{
-//    auto current_time=std::chrono::high_resolution_clock::now();
-//    std::chrono::duration<float>diff =  current_time-last_time;
-//    delta_time = diff.count();
-//    last_time = current_time;
-//    return delta_time;
-//}
-
-void Timer::Start_Frame() 
+void Timer::Start_Frame()
 {
-
     frame_start = std::chrono::high_resolution_clock::now();
-    //glfwPollEvents();
 }
 
 void Timer::End_frame()
 {
     auto frame_end = std::chrono::high_resolution_clock::now();
     std::chrono::duration<float>diff = frame_end - frame_start;
-    float frameduration = diff.count();
-    delta_time = frameduration;
-    float sleeptime = FRAMEDURATION*1000 - frameduration*1000;
+    delta_time= diff.count();
+    float sleeptime = FRAMEDURATION - delta_time;
    
-    if (sleeptime >= 0) {
-        Sleep(sleeptime);
-        duration += FRAMEDURATION;
-        count++;
-        //std::cout << count<<" :"<<duration<<","<<frameduration*1000<<","<<sleeptime<< std::endl;
-        if (count == 144)count = 0;
+    if (sleeptime > 0.0f) {
+        std::this_thread::sleep_for(std::chrono::duration<float>(sleeptime));
+		delta_time = FRAMEDURATION; // fix delta_time to target frame duration
     }
-    else duration += delta_time;
-    
+    else 
+    {
+		// if frame took longer than target duration, just log it
+        std::cout << "Frame took too long: " << delta_time * 1000 << " ms" << std::endl;
+    }
+    std::cout << delta_time*1000 << std::endl;
+    duration += delta_time;
     fps++;
 
-    if (duration >= 1.0f||fps==144)
-    {
-        std::cout << "FPS:" << fps << " " << delta_time*1000 << " " << duration<<" " <<sleeptime<< std::endl;
-        duration = 0.0f, fps = 0;
+    if (duration >= 1.0f) {
+        std::cout << "FPS: " << fps << " Delta Time: " << delta_time * 1000 << " ms" <<",duration:" << duration << std::endl;
+        duration = duration-1.0f;
+        fps = 0;
     }
-    
 }
 
 float Timer::Get_Delta() const 
 {
-  /*  auto current_time = std::chrono::high_resolution_clock::now();
-    std::chrono::duration<float>diff = current_time - last_time;
-    delta_time = diff.count();
-    last_time = current_time;*/
-
     return delta_time;
 }
 

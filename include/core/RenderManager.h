@@ -3,6 +3,9 @@
 #include<glfw3.h>
 #include<ECS/ECSManager.h>
 #include<core/ResourceManager.h>
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
 
 using Entity = unsigned int;
 
@@ -32,6 +35,8 @@ public:
 
 	void Shutdown();
 
+	void RenderTestTriangle();
+
 private:
     ResourceManager* resource_mgr = nullptr;
 	ECS::ECSManager* ecs_mgr = nullptr;
@@ -39,13 +44,19 @@ private:
 	GLuint shader_program = 0;
 	GLuint vao = 0, vbo = 0, ebo = 0;
 
+	// projection matrix for 2D rendering
+	glm::mat4 projectionMatrix;
+
 	std::vector<Vertex> batchVertices;//vertices in the current batch
 	std::vector<GLuint*> boundtextures;//currently bound textures in the batch
 	int texture_count = 0;//number of texture in the current batch
 	int vertex_count = 0;//number of vertices in the current batch
-
-
+	
 private:
+
+	void CompileShaders();
+
+	GLuint CompileShader(const char* vertexSource, const char* fragmentSource);
 
     void BeginBatch();
 
@@ -56,4 +67,12 @@ private:
     void EndBatch();
 
 	void FlushBatch();
+private:
+	void DebugBatchVertices();
+
+	void DebugProjectionMatrix();
+
+	bool IsInNDC(const glm::vec4& point);
+
+	void DebugBoundTextures();
 };

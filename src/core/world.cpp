@@ -15,7 +15,7 @@ GameWorld& GameWorld::Get_Instance()
 void GameWorld::game_on()
 {
 
-	while (!scene_mgr.Is_Empty() && !scene_mgr.Get_current_Scene()->Is_Quit())
+	while (!scene_mgr.Is_Empty() && !scene_mgr.Get_current_Scene()->Is_Quit()&& !glfwWindowShouldClose(window))
 	{
 		
 			timer.Start_Frame();
@@ -25,9 +25,11 @@ void GameWorld::game_on()
 			scene_mgr.Update(timer.Get_Delta());
 
 			scene_mgr.Render();
+			//render_mgr.RenderTestTriangle();
 
 			timer.End_frame();
 			
+			glfwSwapBuffers(window);
 	}
 
 }
@@ -39,8 +41,11 @@ bool GameWorld::Init() {
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
-	window = glfwCreateWindow(800, 600, "Demo", nullptr, nullptr);
+	window = glfwCreateWindow(1280, 800, "rouge", NULL, NULL);
+
 	glfwMakeContextCurrent(window);
+
+	glfwSwapInterval(0);
 
 	glewInit();
 
