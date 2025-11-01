@@ -9,7 +9,7 @@ class GameScene:public Scene
 {
 public:
 	void Update(float delta_time) override;
-	void Render() override;
+	void Render(GLFWwindow* window) override;
 	void Exit() override;
 	void Enter(SceneManager* scene_mgr) override; // Ensure parameter name matches base class declaration
 private:

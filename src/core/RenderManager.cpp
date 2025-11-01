@@ -1,10 +1,14 @@
 #include "core/RenderManager.h"
+#include<ECS/Component.h>
 
-void RenderManager::Init(ResourceManager& resource_mgr)
+void RenderManager::Init(int w,int h)
 {
 	std::cout << "Initializing RenderManager..." << std::endl;
 
-	this->resource_mgr = &resource_mgr;
+	screenHeight = float(h);
+    screenWidth = float(w);
+
+	this->resource_mgr =&ResourceManager::Get_Instance();
 	this->ecs_mgr = &ECS::ECSManager::Get_Instance();
 
 	//declare buffers
@@ -46,7 +50,7 @@ void RenderManager::Init(ResourceManager& resource_mgr)
     CompileShaders();
 
 	//initialize projection matrix
-	projectionMatrix = glm::ortho(0.0f, 1280.0f, 0.0f, 800.0f, -1.0f, 1.0f);
+	projectionMatrix = glm::ortho(0.0f, screenWidth, 0.0f, screenHeight, -1.0f, 1.0f);
 
     //DebugProjectionMatrix();
 
@@ -55,25 +59,29 @@ void RenderManager::Init(ResourceManager& resource_mgr)
 
 }
 
-void RenderManager::Render()
+void RenderManager::Render(GLFWwindow* window)
 {
 	BeginBatch();
 
 	//batch all renderable entities
-    auto& renderble = ecs_mgr->Get_Comp_RenderData();
+    auto& renderble = ecs_mgr->Get_Comp_Storage<ECS::RenderData>();
 
     for (auto& data : renderble.Get_Comp()) {
         GLuint* texture = resource_mgr->Get_Texture(data.second.Id);
         if (data.second.type == ECS::RenderType::SingleImage)
             AddTextureToBatch(texture, data.first, data.second.srcWidth, data.second.srcHeight);
         else if (data.second.type == ECS::RenderType::Sprite) {
-            auto& anim = ecs_mgr->Get_Comp_AnimationData(data.first);
+            auto& anim = ecs_mgr->Get_Component<ECS::AnimationData>(data.first);
             AddSpriteToBatch(texture, data.first, anim.srcX, anim.srcY, data.second.srcWidth, data.second.srcHeight, anim.spriteWidth, anim.spriteHeight);
         }
         //std::cout << "Added entity " << data.second.Id << " to batch." << std::endl;
     }
 
 	EndBatch();
+
+    glfwSwapBuffers(window);
+
+
 }
 
 void RenderManager::Shutdown()
@@ -170,7 +178,7 @@ void RenderManager::BeginBatch()
 	batchVertices.clear();
 	boundtextures.clear();
 
-    glViewport(0, 0, 1280, 800);
+    glViewport(0, 0, screenWidth, screenHeight);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }
 
@@ -204,7 +212,7 @@ void RenderManager::AddTextureToBatch(GLuint* texture,Entity id, int srcWidth, i
         texture_count++;
     }
     
-    auto& trans = ecs_mgr->Get_Comp_Translate(id);
+    auto& trans = ecs_mgr->Get_Component<ECS::Translate>(id);
     
 	
 	// create 4 vertices for the quad
@@ -263,7 +271,7 @@ void RenderManager::AddSpriteToBatch(GLuint* sprite,Entity id, int srcX, int src
         texture_count++;
     }
 
-    auto& trans = ecs_mgr->Get_Comp_Translate(id);
+    auto& trans = ecs_mgr->Get_Component<ECS::Translate>(id);
 
     // create 4 vertices for the quad
     Point position[4] = {
@@ -392,7 +400,6 @@ bool RenderManager::IsInNDC(const glm::vec4& point)
         point.y >= -1.0f && point.y <= 1.0f &&
         point.z >= -1.0f && point.z <= 1.0f;
 }
-
 
 void RenderManager::DebugBoundTextures()
 {

@@ -8,6 +8,15 @@
 class SceneManager
 {
 public:
+	SceneManager() = default;
+	~SceneManager() = default;
+
+	static SceneManager& Get_Instance() 
+	{
+		static SceneManager instance;
+		return instance;
+	}
+
 	void Init(std::unique_ptr<Scene> scene)
 	{
 		std::cout << "Initializing SceneManager..." << std::endl;
@@ -37,9 +46,10 @@ public:
 		current_scene->Update(delta_time);
 	}
 
-	void Render()
+	void Render(GLFWwindow* window)
 	{
-		current_scene->Render();
+		if (current_scene == nullptr)std::cout << "WRAING" << std::endl;
+		current_scene->Render(window);
 	}
 
 private:

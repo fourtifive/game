@@ -26,9 +26,9 @@ void GameScene::Update(float dt)
 {
 	ecs->Update(dt);
 }
-void GameScene::Render()
+void GameScene::Render(GLFWwindow* window)
 {
-	render_mgr->Render();
+	render_mgr->Render(window);
 }
 
 

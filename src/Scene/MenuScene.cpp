@@ -21,7 +21,7 @@ void MenuScene::Update(float dt)
 
 	//}
 }
-void MenuScene::Render()
+void MenuScene::Render(GLFWwindow* window)
 {
 	std::cout << "Render" << std::endl;
 }

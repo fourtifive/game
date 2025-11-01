@@ -7,6 +7,8 @@ public:
 	//float Updata();
 	void Init();
 
+	void Updata();
+
 	void Start_Frame();
 
 	void End_frame();
@@ -19,6 +21,8 @@ public:
 
 	void Reset();
 
+	void test();
+
 	const float FPS = 60;
 	const float FRAMEDURATION = 1.0f / FPS;
 
@@ -28,5 +32,5 @@ private:
 	unsigned int fps = 0;
 	float duration = 0.0f;
 	std::chrono::high_resolution_clock::time_point frame_start;
-	int count = 0;
+	
 };

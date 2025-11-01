@@ -55,7 +55,7 @@ void InputManager::Update(double currentTime) {
 // 非静态处理函数（由静态回调转发）
 void InputManager::OnKey(int key, int scancode, int action, int mods) {
     double now = glfwGetTime();
-	std::cout << "Key Event: key=" << key << " action=" << action << std::endl;
+	//std::cout << "Key Event: key=" << key << " action=" << action << std::endl;
     if (action == GLFW_PRESS) {
         auto& s = keyStates[key];
         s.pressed = true;
@@ -95,12 +95,12 @@ void InputManager::OnScroll(double xoffset, double yoffset) {
 // 静态回调：取回 window 的 user pointer 转发给实例
 void InputManager::KeyCallback(GLFWwindow* window, int key, int scancode, int action, int mods) {
     void* ptr = glfwGetWindowUserPointer(window);
-    if (ptr) {
+    /*if (ptr) {
         std::cout << "User pointer found, calling OnKey..." << std::endl;
     }
     else {
         std::cout << "ERROR: User pointer is null!" << std::endl;
-    }
+    }*/
     if (ptr) reinterpret_cast<InputManager*>(ptr)->OnKey(key, scancode, action, mods);
 }
 void InputManager::MouseButtonCallback(GLFWwindow* window, int button, int action, int mods) {

@@ -11,7 +11,7 @@ namespace ECS {
 		~TransSystem()=default;
 
 		void Update(ECS::ECSManager& ecs_mgr,float delta_time) {
-			ECSManager::Get_Instance().Traverse_Eachtrans([delta_time](Entity id, Translate& comp,InputManager& input_mgr) {
+			ecs_mgr.Traverse<ECS::Translate>([delta_time](Entity id,InputManager& input_mgr, Translate& comp) {
 					if(input_mgr.IsKeyDown(GLFW_KEY_D)) comp.position.x += 5;
 					if(input_mgr.IsKeyDown(GLFW_KEY_A)) comp.position.x -= 5;
 					if(input_mgr.IsKeyDown(GLFW_KEY_W)) comp.position.y += 5;

@@ -17,19 +17,17 @@ void GameWorld::game_on()
 
 	while (!scene_mgr.Is_Empty() && !scene_mgr.Get_current_Scene()->Is_Quit()&& !glfwWindowShouldClose(window))
 	{
-		
-			timer.Start_Frame();
+			//timer.Start_Frame();
+			timer.Updata();
 			
 			input_mgr.Update(timer.Get_Delta());
 
 			scene_mgr.Update(timer.Get_Delta());
 
-			scene_mgr.Render();
-			//render_mgr.RenderTestTriangle();
-
-			timer.End_frame();
+			scene_mgr.Render(window);
 			
-			glfwSwapBuffers(window);
+			//timer.End_frame();
+
 	}
 
 }
@@ -41,11 +39,11 @@ bool GameWorld::Init() {
 	glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
-	window = glfwCreateWindow(1280, 800, "rouge", NULL, NULL);
+	window = glfwCreateWindow(SCREEN_WIDTH,SCREEN_HEIGHT, "rouge", NULL, NULL);
 
 	glfwMakeContextCurrent(window);
 
-	glfwSwapInterval(0);
+	glfwSwapInterval(1);
 
 	glewInit();
 
@@ -55,7 +53,7 @@ bool GameWorld::Init() {
 
 	resource_mgr.Init();
 
-	render_mgr.Init(resource_mgr);
+	render_mgr.Init(SCREEN_WIDTH, SCREEN_HEIGHT);
 
 	scene_mgr.Init(std::make_unique<GameScene>());
 

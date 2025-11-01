@@ -29,9 +29,9 @@ public:
         return instance;
 	}
 
-    void Init(ResourceManager& resource_mgr);
+    void Init(int screenW,int screenH);
 
-    void Render();
+    void Render(GLFWwindow* window);
 
 	void Shutdown();
 
@@ -51,6 +51,10 @@ private:
 	std::vector<GLuint*> boundtextures;//currently bound textures in the batch
 	int texture_count = 0;//number of texture in the current batch
 	int vertex_count = 0;//number of vertices in the current batch
+	
+	float screenWidth=0.0f;
+	float screenHeight = 0.0f;
+
 	
 private:
 

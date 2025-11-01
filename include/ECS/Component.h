@@ -7,7 +7,6 @@ namespace ECS {
 		Point position;
 	};
 	
-
 	enum class RenderType {
 		SingleImage,
 		Sprite

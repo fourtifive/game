@@ -3,44 +3,36 @@
   "WorkspaceRootPath": "D:\\code\\game\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C31D3654-7F81-46E4-8373-2C12B8FCAFF9}|game.vcxproj|D:\\code\\game\\src\\core\\Timer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C31D3654-7F81-46E4-8373-2C12B8FCAFF9}|game.vcxproj|solutionrelative:src\\core\\Timer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{C31D3654-7F81-46E4-8373-2C12B8FCAFF9}|game.vcxproj|D:\\code\\game\\include\\ECS\\Component.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C31D3654-7F81-46E4-8373-2C12B8FCAFF9}|game.vcxproj|solutionrelative:include\\ECS\\Component.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C31D3654-7F81-46E4-8373-2C12B8FCAFF9}|game.vcxproj|D:\\code\\game\\include\\core\\Timer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C31D3654-7F81-46E4-8373-2C12B8FCAFF9}|game.vcxproj|solutionrelative:include\\core\\Timer.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C31D3654-7F81-46E4-8373-2C12B8FCAFF9}|game.vcxproj|D:\\code\\game\\src\\core\\ResourceManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C31D3654-7F81-46E4-8373-2C12B8FCAFF9}|game.vcxproj|solutionrelative:src\\core\\ResourceManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C31D3654-7F81-46E4-8373-2C12B8FCAFF9}|game.vcxproj|D:\\code\\game\\src\\core\\world.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C31D3654-7F81-46E4-8373-2C12B8FCAFF9}|game.vcxproj|solutionrelative:src\\core\\world.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{C31D3654-7F81-46E4-8373-2C12B8FCAFF9}|game.vcxproj|D:\\code\\game\\include\\ECS\\TransSystem.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C31D3654-7F81-46E4-8373-2C12B8FCAFF9}|game.vcxproj|solutionrelative:include\\ECS\\TransSystem.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C31D3654-7F81-46E4-8373-2C12B8FCAFF9}|game.vcxproj|D:\\code\\game\\include\\ECS\\SpriteAnimationSystem.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{C31D3654-7F81-46E4-8373-2C12B8FCAFF9}|game.vcxproj|solutionrelative:include\\ECS\\SpriteAnimationSystem.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C31D3654-7F81-46E4-8373-2C12B8FCAFF9}|game.vcxproj|D:\\code\\game\\include\\core\\RenderManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C31D3654-7F81-46E4-8373-2C12B8FCAFF9}|game.vcxproj|solutionrelative:include\\core\\RenderManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{C31D3654-7F81-46E4-8373-2C12B8FCAFF9}|game.vcxproj|D:\\code\\game\\include\\ECS\\ECSManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C31D3654-7F81-46E4-8373-2C12B8FCAFF9}|game.vcxproj|solutionrelative:include\\ECS\\ECSManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C31D3654-7F81-46E4-8373-2C12B8FCAFF9}|game.vcxproj|D:\\code\\game\\src\\core\\RenderManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{C31D3654-7F81-46E4-8373-2C12B8FCAFF9}|game.vcxproj|solutionrelative:src\\core\\RenderManager.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{C31D3654-7F81-46E4-8373-2C12B8FCAFF9}|game.vcxproj|D:\\code\\game\\src\\Scene\\GameScene.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C31D3654-7F81-46E4-8373-2C12B8FCAFF9}|game.vcxproj|solutionrelative:src\\Scene\\GameScene.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C31D3654-7F81-46E4-8373-2C12B8FCAFF9}|game.vcxproj|D:\\code\\game\\src\\core\\world.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C31D3654-7F81-46E4-8373-2C12B8FCAFF9}|game.vcxproj|solutionrelative:src\\core\\world.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{C31D3654-7F81-46E4-8373-2C12B8FCAFF9}|game.vcxproj|D:\\code\\game\\src\\ECS\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{C31D3654-7F81-46E4-8373-2C12B8FCAFF9}|game.vcxproj|solutionrelative:src\\ECS\\Player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C31D3654-7F81-46E4-8373-2C12B8FCAFF9}|game.vcxproj|D:\\code\\game\\include\\ECS\\ECSManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C31D3654-7F81-46E4-8373-2C12B8FCAFF9}|game.vcxproj|solutionrelative:include\\ECS\\ECSManager.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C31D3654-7F81-46E4-8373-2C12B8FCAFF9}|game.vcxproj|D:\\code\\game\\include\\ECS\\TransSystem.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C31D3654-7F81-46E4-8373-2C12B8FCAFF9}|game.vcxproj|solutionrelative:include\\ECS\\TransSystem.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,7 +42,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -62,41 +54,54 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Timer.h",
-              "DocumentMoniker": "D:\\code\\game\\include\\core\\Timer.h",
-              "RelativeDocumentMoniker": "include\\core\\Timer.h",
-              "ToolTip": "D:\\code\\game\\include\\core\\Timer.h",
-              "RelativeToolTip": "include\\core\\Timer.h",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAB4AAAAPAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "ECSManager.h",
+              "DocumentMoniker": "D:\\code\\game\\include\\ECS\\ECSManager.h",
+              "RelativeDocumentMoniker": "include\\ECS\\ECSManager.h",
+              "ToolTip": "D:\\code\\game\\include\\ECS\\ECSManager.h",
+              "RelativeToolTip": "include\\ECS\\ECSManager.h",
+              "ViewState": "AgIAACQAAAAAAAAAAAAqwEsAAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-10-31T14:21:55.447Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Timer.cpp",
-              "DocumentMoniker": "D:\\code\\game\\src\\core\\Timer.cpp",
-              "RelativeDocumentMoniker": "src\\core\\Timer.cpp",
-              "ToolTip": "D:\\code\\game\\src\\core\\Timer.cpp",
-              "RelativeToolTip": "src\\core\\Timer.cpp",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAACgAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-10-31T12:22:16.501Z",
+              "WhenOpened": "2025-11-01T12:13:50.898Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "ResourceManager.cpp",
-              "DocumentMoniker": "D:\\code\\game\\src\\core\\ResourceManager.cpp",
-              "RelativeDocumentMoniker": "src\\core\\ResourceManager.cpp",
-              "ToolTip": "D:\\code\\game\\src\\core\\ResourceManager.cpp",
-              "RelativeToolTip": "src\\core\\ResourceManager.cpp",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAA4AAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-10-31T05:35:02.371Z",
+              "Title": "SpriteAnimationSystem.h",
+              "DocumentMoniker": "D:\\code\\game\\include\\ECS\\SpriteAnimationSystem.h",
+              "RelativeDocumentMoniker": "include\\ECS\\SpriteAnimationSystem.h",
+              "ToolTip": "D:\\code\\game\\include\\ECS\\SpriteAnimationSystem.h",
+              "RelativeToolTip": "include\\ECS\\SpriteAnimationSystem.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-11-01T04:58:31.421Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TransSystem.h",
+              "DocumentMoniker": "D:\\code\\game\\include\\ECS\\TransSystem.h",
+              "RelativeDocumentMoniker": "include\\ECS\\TransSystem.h",
+              "ToolTip": "D:\\code\\game\\include\\ECS\\TransSystem.h",
+              "RelativeToolTip": "include\\ECS\\TransSystem.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-11-01T04:58:30.199Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Component.h",
+              "DocumentMoniker": "D:\\code\\game\\include\\ECS\\Component.h",
+              "RelativeDocumentMoniker": "include\\ECS\\Component.h",
+              "ToolTip": "D:\\code\\game\\include\\ECS\\Component.h",
+              "RelativeToolTip": "include\\ECS\\Component.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-11-01T04:58:26.193Z",
               "EditorCaption": ""
             },
             {
@@ -109,83 +114,44 @@
               "RelativeToolTip": "src\\ECS\\Player.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-10-31T04:23:08.891Z"
+              "WhenOpened": "2025-11-01T04:58:19.761Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ECSManager.h",
-              "DocumentMoniker": "D:\\code\\game\\include\\ECS\\ECSManager.h",
-              "RelativeDocumentMoniker": "include\\ECS\\ECSManager.h",
-              "ToolTip": "D:\\code\\game\\include\\ECS\\ECSManager.h",
-              "RelativeToolTip": "include\\ECS\\ECSManager.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFcAAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-10-30T13:50:20.782Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "TransSystem.h",
-              "DocumentMoniker": "D:\\code\\game\\include\\ECS\\TransSystem.h",
-              "RelativeDocumentMoniker": "include\\ECS\\TransSystem.h",
-              "ToolTip": "D:\\code\\game\\include\\ECS\\TransSystem.h",
-              "RelativeToolTip": "include\\ECS\\TransSystem.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAA+AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-10-30T13:54:44.259Z"
+              "DocumentIndex": 5,
+              "Title": "GameScene.cpp",
+              "DocumentMoniker": "D:\\code\\game\\src\\Scene\\GameScene.cpp",
+              "RelativeDocumentMoniker": "src\\Scene\\GameScene.cpp",
+              "ToolTip": "D:\\code\\game\\src\\Scene\\GameScene.cpp",
+              "RelativeToolTip": "src\\Scene\\GameScene.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-11-01T04:57:05.851Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "SpriteAnimationSystem.h",
-              "DocumentMoniker": "D:\\code\\game\\include\\ECS\\SpriteAnimationSystem.h",
-              "RelativeDocumentMoniker": "include\\ECS\\SpriteAnimationSystem.h",
-              "ToolTip": "D:\\code\\game\\include\\ECS\\SpriteAnimationSystem.h",
-              "RelativeToolTip": "include\\ECS\\SpriteAnimationSystem.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-10-30T13:49:55.078Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "world.cpp",
-              "DocumentMoniker": "D:\\code\\game\\src\\core\\world.cpp",
-              "RelativeDocumentMoniker": "src\\core\\world.cpp",
-              "ToolTip": "D:\\code\\game\\src\\core\\world.cpp",
-              "RelativeToolTip": "src\\core\\world.cpp",
-              "ViewState": "AgIAACcAAAAAAAAAAAAAADUAAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-10-30T10:53:02.922Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
               "Title": "RenderManager.cpp",
               "DocumentMoniker": "D:\\code\\game\\src\\core\\RenderManager.cpp",
               "RelativeDocumentMoniker": "src\\core\\RenderManager.cpp",
               "ToolTip": "D:\\code\\game\\src\\core\\RenderManager.cpp",
               "RelativeToolTip": "src\\core\\RenderManager.cpp",
-              "ViewState": "AgIAABcAAAAAAAAAAAAqwDIAAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAACMBAAAAAAAAAAAqwJIBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-10-30T05:22:29.576Z",
+              "WhenOpened": "2025-11-01T03:10:29.806Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "RenderManager.h",
-              "DocumentMoniker": "D:\\code\\game\\include\\core\\RenderManager.h",
-              "RelativeDocumentMoniker": "include\\core\\RenderManager.h",
-              "ToolTip": "D:\\code\\game\\include\\core\\RenderManager.h",
-              "RelativeToolTip": "include\\core\\RenderManager.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEoAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-10-30T05:11:07.535Z",
-              "EditorCaption": ""
+              "DocumentIndex": 6,
+              "Title": "world.cpp",
+              "DocumentMoniker": "D:\\code\\game\\src\\core\\world.cpp",
+              "RelativeDocumentMoniker": "src\\core\\world.cpp",
+              "ToolTip": "D:\\code\\game\\src\\core\\world.cpp",
+              "RelativeToolTip": "src\\core\\world.cpp",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABoAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-10-30T10:53:02.922Z"
             }
           ]
         },

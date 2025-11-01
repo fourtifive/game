@@ -18,8 +18,11 @@ public:
 	GameWorld()=default;
 	~GameWorld()=default;
 
+public:
+	const int SCREEN_WIDTH = 1280;
+	const int SCREEN_HEIGHT = 800;
 private:
-	SceneManager scene_mgr;
+	SceneManager& scene_mgr=SceneManager::Get_Instance();
 	InputManager& input_mgr=InputManager::Get_Instance();
 	ResourceManager& resource_mgr = ResourceManager::Get_Instance();
 	RenderManager& render_mgr = RenderManager::Get_Instance();
