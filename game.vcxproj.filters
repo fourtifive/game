@@ -116,5 +116,8 @@
     <ClInclude Include="include\ECS\SpriteAnimationSystem.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="include\ECS\StateSystem.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

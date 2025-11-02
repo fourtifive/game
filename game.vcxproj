@@ -153,6 +153,7 @@
     <ClInclude Include="include\core\world.h" />
     <ClInclude Include="include\core\Scene.h" />
     <ClInclude Include="include\ECS\SpriteAnimationSystem.h" />
+    <ClInclude Include="include\ECS\StateSystem.h" />
     <ClInclude Include="include\ECS\System.h" />
     <ClInclude Include="include\ECS\TransSystem.h" />
     <ClInclude Include="include\Scene\GameScene.h" />
