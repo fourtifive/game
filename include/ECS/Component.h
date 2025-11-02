@@ -7,16 +7,20 @@ namespace ECS {
 	{
 		Point position;
 		Point scale = {1,1};
-		Point rotation;
+		Point rotation = {0,0};
 
         bool isfacingright = true;
 	};
 	
 	struct Physical
 	{
-		Point velocity;
-		Point acceleration;
-		float maxSpeed = 0.0f;
+		Physical() = default;
+		Physical(float maxSpeed, float accelerationX,float deceleration) : maxSpeed(maxSpeed),acceleration(acceleration),deceleration(deceleration)
+		{}
+		Point velocity = {1,1};
+		float acceleration;
+		float deceleration;
+		float maxSpeed;
 		float runMutiplier=1.5f;
 
 		float mass = 1.0f;
@@ -36,44 +40,59 @@ namespace ECS {
 	struct RenderData {
 		RenderData() = default;
 
-		RenderData(RenderType t, std::string id, int width, int height) :
-			type(t), Id(id), srcWidth(width), srcHeight(height)
+		RenderData(RenderType t, std::string id) :
+			type(t), Id(id)
 		{}
 
 		RenderType type;          // render type
 		std::string Id;     // ID of the sprite/image to render
 
-		int srcWidth = 0;
-		int srcHeight = 0;
+		int srcWidth = 0;           // width to render
+		int srcHeight = 0;          // height to render
 
+	};
+
+	struct AnimationConfig
+	{
+		AnimationConfig() = default;
+		AnimationConfig(int x, int y, int spriteWidth, int spriteHeight, int totalFrames, int frameDelay, int width, int height) :
+			srcX(x), srcY(y), spriteWidth(spriteWidth), spriteHeight(spriteHeight), totalFrames(totalFrames), frameDelay(frameDelay), srcWidth(width), srcHeight(height)
+		{}
+		int spriteWidth;  // width of a single frame
+		int spriteHeight; // height of a single frame
+		int totalFrames;
+		int frameDelay; // milliseconds
+		//bool isfacingright = true;
+		//bool isloop = true;
+		int srcWidth;
+		int srcHeight;
+		int srcX = 0;
+		int srcY = 0;
 	};
 
 	struct AnimationData
 	{
 		AnimationData() = default;
-		AnimationData(int totalFrames, int frameDelay,int x,int y, int spriteWidth, int spriteHeight) :
-			totalFrames(totalFrames), frameDelay(frameDelay),srcX(x),srcY(y), spriteWidth(spriteWidth), spriteHeight(spriteHeight)
+		AnimationData(std::string id) : 
+			animID(id)
 		{}
+
+		std::string animID;
+
+		std::unordered_map<std::string, AnimationConfig> animations;
 
 		// For sprite rendering
 		int currentFrame = 0;
-		int totalFrames = 1;
-		int frameDelay = 100; // milliseconds
-		int elapsedTime = 0; // milliseconds
-
-		int spriteWidth = 0;  // width of a single frame
-		int spriteHeight = 0; // height of a single frame
-
-		bool isfacingright = true;
-		bool isloop = true;
-
-		int srcX = 0;
-		int srcY = 0;
+		float elapsedTime = 0; // milliseconds
 	};
 
 	struct State{
-		std::string currentState = "IDLE";      
-		std::string previousState = "IDLE";     
+		State(std::string current) :
+			currentState(current)
+		{}
+		State() = default;
+		std::string currentState="player_idle";
+		std::string previousState;     
 		float stateTimer = 0.0f;                
 
 		bool isStateLocked = false;             
@@ -89,8 +108,6 @@ namespace ECS {
 		bool IsInState(const std::string& state) const {
 			return currentState == state;
 		}
-
-	private:
 		std::string requestedState;
 		bool pendingStateChange = false;
 	};

@@ -4,8 +4,12 @@ bool ResourceManager::Init()
 {
 	std::cout << "Initializing ResourceManager..." << std::endl;
 
-	if(Load_Texture("player_walking","assert/Samurai/Walk.png"))std::cout<<"Loaded texture successfully : player_waking" << std::endl;
-	else std::cout << "Failed to load texture : player_waking" << std::endl;
+	if(Load_Texture("player_walking","assert/Samurai/Walk.png"))std::cout<<"Loaded texture successfully : player_walking" << std::endl;
+	else std::cout << "Failed to load texture : player_walking" << std::endl;
+	if (Load_Texture("player_idle", "assert/Samurai/Idle.png"))std::cout << "Loaded texture successfully : player_idle" << std::endl;
+	else std::cout << "Failed to load texture : player_idle" << std::endl;
+	if (Load_Texture("player_run", "assert/Samurai/Run.png"))std::cout << "Loaded texture successfully : player_run" << std::endl;
+	else std::cout << "Failed to load texture : player_run" << std::endl;
 
 	return true;
 }

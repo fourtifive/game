@@ -72,7 +72,7 @@ void RenderManager::Render(GLFWwindow* window)
             AddTextureToBatch(texture, data.first, data.second.srcWidth, data.second.srcHeight);
         else if (data.second.type == ECS::RenderType::Sprite) {
             auto& anim = ecs_mgr->Get_Component<ECS::AnimationData>(data.first);
-            AddSpriteToBatch(texture, data.first, anim.srcX, anim.srcY, data.second.srcWidth, data.second.srcHeight, anim.spriteWidth, anim.spriteHeight);
+            AddSpriteToBatch(texture, data.first, anim.animations[anim.animID].srcX, anim.animations[anim.animID].srcY, anim.animations[anim.animID].srcWidth, anim.animations[anim.animID].srcHeight, anim.animations[anim.animID].spriteWidth, anim.animations[anim.animID].spriteHeight);
         }
         //std::cout << "Added entity " << data.second.Id << " to batch." << std::endl;
     }
@@ -247,7 +247,7 @@ void RenderManager::AddSpriteToBatch(GLuint* sprite,Entity id, int srcX, int src
         std::cout << "Texture is null!" << std::endl;
         return;
     }
-
+    
     // check if texture is already bound
     int textureIndex = -1;
     for (int i = 0; i < boundtextures.size(); i++) {
@@ -276,16 +276,16 @@ void RenderManager::AddSpriteToBatch(GLuint* sprite,Entity id, int srcX, int src
     // create 4 vertices for the quad
     Point position[4] = {
         {trans.position.x,trans.position.y},
-        {trans.position.x + srcWidth,trans.position.y },
-        {trans.position.x + srcWidth,trans.position.y + srcHeight },
-        {trans.position.x,trans.position.y + srcHeight }
+        {trans.position.x + spriteWidth,trans.position.y },
+        {trans.position.x + spriteWidth,trans.position.y + spriteHeight },
+        {trans.position.x,trans.position.y + spriteHeight }
     };
 
     
-    float u1 = (float)srcX / srcWidth;          // вС
-    float v1 = (float)srcY / srcHeight;         // об  
-    float u2 = (float)(srcX + spriteWidth) / srcWidth;   // ср
-    float v2 = (float)(srcY + spriteHeight) / srcHeight; // ио
+    float u1 = (float)srcX / srcWidth;          
+    float v1 = (float)srcY / srcHeight;          
+    float u2 = (float)(srcX + spriteWidth) / srcWidth;   
+    float v2 = (float)(srcY + spriteHeight) / srcHeight; 
     Point texcoord[4] = {
         {u1, v1}, 
         {u2, v1},  

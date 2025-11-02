@@ -1,7 +1,8 @@
 #include <Scene/GameScene.h>
 #include<iostream>
 #include<ECS/TransSystem.h>
-
+#include<ECS/StateSystem.h>
+#include<ECS/SpriteAnimationSystem.h>
 
 void GameScene::Enter(SceneManager* mgr)
 {
@@ -10,6 +11,8 @@ void GameScene::Enter(SceneManager* mgr)
 	ecs = &ECS::ECSManager::Get_Instance();
 
 	ecs->Register_System<ECS::TransSystem>();
+	ecs->Register_System<ECS::StateSystem>();
+	ecs->Register_System<ECS::SpriteAnimationSystem>();
 
 	std::cout << "Enter GameScene..." << std::endl;
 

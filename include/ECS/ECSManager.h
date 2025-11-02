@@ -111,7 +111,7 @@ namespace ECS {
                         func(id,input_mgr);  
                     }  
                     else {  
-                        func(id,input_mgr, Get_Component<ComponentTypes>(id)...);  
+                        func(id,input_mgr, Get_Component<ComponentTypes>(id)...); 
                     }  
                 }  
             }  
@@ -146,6 +146,9 @@ namespace ECS {
 		CompStorage<Translate> translate;
 		CompStorage<RenderData> renderdata;
 		CompStorage<AnimationData> animationdata;
+		CompStorage<Physical> physical;
+		CompStorage<State> state;
+		CompStorage<PlayerControlled> playercontrolled;
 
 		std::unordered_map<std::type_index,unsigned int> component_type_map;
 		unsigned int component_type = 0;
@@ -168,4 +171,18 @@ namespace ECS {
 		return animationdata;
 	}
 
+	template<>
+	inline CompStorage<Physical>& ECSManager::Get_Comp_Storage<Physical>() {
+		return physical;
+	}
+
+	template<>
+	inline CompStorage<State>& ECSManager::Get_Comp_Storage<State>() {
+		return state;
+	}
+
+	template<>
+	inline CompStorage<PlayerControlled>& ECSManager::Get_Comp_Storage<PlayerControlled>() {
+		return playercontrolled;
+	}
 }
