@@ -1,6 +1,5 @@
 #pragma once
 #include<core/world.h>
-#include<graphics.h>
 #include<iostream>
 #include <Scene/MenuScene.h>
 #include<Scene/GameScene.h>

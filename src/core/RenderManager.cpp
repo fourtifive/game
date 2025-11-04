@@ -274,12 +274,21 @@ void RenderManager::AddSpriteToBatch(GLuint* sprite,Entity id, int srcX, int src
     auto& trans = ecs_mgr->Get_Component<ECS::Translate>(id);
 
     // create 4 vertices for the quad
-    Point position[4] = {
-        {trans.position.x,trans.position.y},
-        {trans.position.x + spriteWidth,trans.position.y },
-        {trans.position.x + spriteWidth,trans.position.y + spriteHeight },
-        {trans.position.x,trans.position.y + spriteHeight }
-    };
+    Point position[4];
+
+    if (trans.isfacingright) {
+        position[0] = { trans.position.x,trans.position.y };
+        position[1]= { trans.position.x + spriteWidth, trans.position.y };
+        position[2]={ trans.position.x + spriteWidth, trans.position.y + spriteHeight };
+        position[3]={ trans.position.x, trans.position.y + spriteHeight };
+
+    }
+    else {
+        position[0]={ trans.position.x + spriteWidth, trans.position.y };
+        position[1]={ trans.position.x, trans.position.y };
+        position[2]={ trans.position.x, trans.position.y + spriteHeight };
+        position[3]={trans.position.x + spriteWidth, trans.position.y + spriteHeight};
+    }
 
     
     float u1 = (float)srcX / srcWidth;          

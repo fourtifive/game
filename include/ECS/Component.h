@@ -15,9 +15,9 @@ namespace ECS {
 	struct Physical
 	{
 		Physical() = default;
-		Physical(float maxSpeed, float accelerationX,float deceleration) : maxSpeed(maxSpeed),acceleration(acceleration),deceleration(deceleration)
+		Physical(float maxSpeed, float acceleration,float deceleration) : maxSpeed(maxSpeed),acceleration(acceleration),deceleration(deceleration)
 		{}
-		Point velocity = {1,1};
+		Point velocity = {0,0};
 		float acceleration;
 		float deceleration;
 		float maxSpeed;
@@ -91,7 +91,7 @@ namespace ECS {
 			currentState(current)
 		{}
 		State() = default;
-		std::string currentState="player_idle";
+		std::string currentState;
 		std::string previousState;     
 		float stateTimer = 0.0f;                
 

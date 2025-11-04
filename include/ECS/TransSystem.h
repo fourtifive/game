@@ -18,37 +18,23 @@ namespace ECS {
 	private:
 		void HandleMoveMent(float delta_time,InputManager& input_mgr, ECS::Translate& trans, ECS::Physical& phy)
 		{
-            /*float move_input = 0.0f;
-            if (input_mgr.IsKeyDown(GLFW_KEY_A)) move_input -= 1.0f;
-            if (input_mgr.IsKeyDown(GLFW_KEY_D)) move_input += 1.0f;
+            float move = 0.0f;
+            if (input_mgr.IsKeyDown(GLFW_KEY_A)) move = -1.0f;
+            if (input_mgr.IsKeyDown(GLFW_KEY_D)) move = 1.0f;
+			if (input_mgr.IsKeyDown(GLFW_KEY_LEFT_SHIFT)) move *= phy.runMutiplier;
 
-            float target_speed = move_input * phy.maxSpeed;  
+            if (std::abs(move) > 0.1f)phy.velocity.x += move * phy.maxSpeed*phy.acceleration;
+            else phy.velocity.x -= phy.velocity.x*phy.deceleration;
 
-            float speed_diff = target_speed - phy.velocity.x;
-            float acceleration = speed_diff * phy.acceleration * delta_time;
+			if (move > 0.1f) trans.isfacingright = true;
+			else if (move < -0.1f) trans.isfacingright = false;
 
-            phy.velocity.x += acceleration*move_input;
-
-            if (std::abs(phy.velocity.x) > phy.maxSpeed) {
-                phy.velocity.x = (phy.velocity.x > 0) ? phy.maxSpeed : -phy.maxSpeed;
-            }
-
-            trans.position.x += phy.velocity.x * delta_time;
-
-            if (move_input > 0.1f) {
-                trans.isfacingright = true;
-            }
-            else if (move_input < -0.1f) {
-                trans.isfacingright = false;
-            }
-			
-			std::cout << "velocity x: " << phy.velocity.x << std::endl;*/
-
-			if (input_mgr.IsKeyDown(GLFW_KEY_A)) trans.position.x-=5;
-			if (input_mgr.IsKeyDown(GLFW_KEY_D))trans.position.x+=5;
-
+			if (std::abs(phy.velocity.x) > phy.maxSpeed ) {
+				phy.velocity.x = (phy.velocity.x > 0) ? phy.maxSpeed : -phy.maxSpeed;
+			}
+			if(phy.velocity.x>=1.0f|| phy.velocity.x <= -1.0f)
+				trans.position.x += phy.velocity.x;
+			std::cout << trans.position.x << "\n";
 		}
 	};
-
-
 }
