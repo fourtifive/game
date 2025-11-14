@@ -56,6 +56,8 @@ void RenderManager::Init(int w,int h)
 
     glBindVertexArray(0);
 
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
 }
 
@@ -65,8 +67,11 @@ void RenderManager::Render(GLFWwindow* window)
 
 	//batch all renderable entities
     auto& renderble = ecs_mgr->Get_Comp_Storage<ECS::RenderData>();
-
+    //auto& box = ecs_mgr->Get_Comp_Storage<ECS::ColliderBox>();
+     
+	//std::cout << "---Rendering---" << std::endl;
     for (auto& data : renderble.Get_Comp()) {
+		//std::cout << data.second.Id <<" "<<data.first<<" ";
         GLuint* texture = resource_mgr->Get_Texture(data.second.Id);
         if (data.second.type == ECS::RenderType::SingleImage)
             AddTextureToBatch(texture, data.first, data.second.srcWidth, data.second.srcHeight);
@@ -76,6 +81,7 @@ void RenderManager::Render(GLFWwindow* window)
         }
         //std::cout << "Added entity " << data.second.Id << " to batch." << std::endl;
     }
+    //std::cout << std::endl;
 
 	EndBatch();
 
@@ -218,9 +224,9 @@ void RenderManager::AddTextureToBatch(GLuint* texture,Entity id, int srcWidth, i
 	// create 4 vertices for the quad
     Point position[4] = {
         {trans.position.x,trans.position.y},
-        {trans.position.x + srcWidth,trans.position.y },
-        {trans.position.x + srcWidth,trans.position.y + srcHeight },
-        {trans.position.x,trans.position.y + srcHeight }
+        {trans.position.x + srcWidth*trans.scale.x,trans.position.y },
+        {trans.position.x + srcWidth*trans.scale.x,trans.position.y + srcHeight*trans.scale.y },
+        {trans.position.x,trans.position.y + srcHeight*trans.scale.y }
 	};
 
     Point texcoord[4] = {
@@ -278,9 +284,9 @@ void RenderManager::AddSpriteToBatch(GLuint* sprite,Entity id, int srcX, int src
 
     if (trans.isfacingright) {
         position[0] = { trans.position.x,trans.position.y };
-        position[1]= { trans.position.x + spriteWidth, trans.position.y };
-        position[2]={ trans.position.x + spriteWidth, trans.position.y + spriteHeight };
-        position[3]={ trans.position.x, trans.position.y + spriteHeight };
+        position[1]= { trans.position.x + spriteWidth*trans.scale.x, trans.position.y };
+        position[2]={ trans.position.x + spriteWidth*trans.scale.x, trans.position.y + spriteHeight*trans.scale.y };
+        position[3]={ trans.position.x, trans.position.y + spriteHeight*trans.scale.y };
 
     }
     else {

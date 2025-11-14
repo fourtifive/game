@@ -1,6 +1,6 @@
 #pragma once
 const size_t MAX_COMPONENTS = 32;
-const unsigned int PLAYER = 1;
+const unsigned int PLAYER = 0;
 #include<bitset>
 #include<algorithm>
 #include<vector>
@@ -28,8 +28,6 @@ namespace ECS {
 		}
 
 		Entity Create_Entity(Entity id) {
-			if (id_count == id)id_count++;
-
 			entities.push_back(id);
 			compmasks.resize(id_count);
 			return id;

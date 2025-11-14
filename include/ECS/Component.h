@@ -112,5 +112,47 @@ namespace ECS {
 		bool pendingStateChange = false;
 	};
 
+	enum CollisionLayer
+	{
+		PLAYER = 1,
+		ENEMY = 2,
+		GROUND = 4,
+		WALL = 8
+	};
+
+	struct ColliderBox
+	{
+		ColliderBox() = default;
+		ColliderBox(Entity id,float width, float height, CollisionLayer layer, int mask) :
+			owner(id), width(width), height(height), layer(layer), mask(mask)
+		{}
+		float width;
+		float height;
+		float offsetX = 0.0f;
+		float offsetY = 0.0f;
+		float xL, xR, yU,yD; // AABB bounds
+
+		CollisionLayer layer;
+		int mask;
+
+		bool is_trigger = false;
+		bool is_active = true;
+		bool is_static = false;
+
+		Entity owner; // Reference to the owning entity
+	};
+
+	struct CollisionEvent
+	{
+
+	};
+
+	struct MapData
+	{
+		Point map_size = { 2000.0f,1000.0f };
+		Point start;
+		Point end;
+		std::vector<Entity>TerrainChunks;
+	};
 }
 

@@ -12,11 +12,11 @@ namespace ECS{
 
 		void Update(ECSManager& ecs_mgr, float deltaTime) {
 
-			ecs_mgr.Traverse<ECS::AnimationData, ECS::RenderData,ECS::State>([this,deltaTime](Entity id,InputManager& input,ECS::AnimationData& anim, ECS::RenderData& renderdata,ECS::State& state)
+			ecs_mgr.TraverseNoInput<ECS::AnimationData, ECS::RenderData,ECS::State>([this,deltaTime](Entity id,ECS::AnimationData& anim, ECS::RenderData& renderdata,ECS::State& state)
 				{
 					if (renderdata.Id != state.currentState) {
-						//anim.animations[renderdata.Id].srcX = 0;
-						//anim.animations[renderdata.Id].srcY = 0;
+						anim.animations[renderdata.Id].srcX = 0;
+						anim.animations[renderdata.Id].srcY = 0;
 						anim.animID = state.currentState;
 						renderdata.Id = state.currentState;
 						anim.currentFrame = 0.0f;

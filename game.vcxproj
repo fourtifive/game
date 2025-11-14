@@ -116,14 +116,14 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>GLEW_STATIC;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>D:\code\game\opengl;D:\code\game\opengl\glew\include\GL;D:\code\game\opengl\glfw\include\GLFW;D:\code\game\src;D:\code\game\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>D:\code\game\opengl;D:\code\game\opengl\glm;D:\code\game\opengl\glfw\include\GLFW;D:\code\game\opengl\glew\include\GL;D:\code\game\src;D:\code\game\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>D:\code\game\opengl\glfw\lib-vc2022;D:\code\game\opengl\glew\lib\Release\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>D:\code\game\opengl\glew\lib\Release\x64;D:\code\game\opengl\glfw\lib-vc2022;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>opengl32.lib;glfw3.lib;glew32s.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -145,6 +145,7 @@
     <ClInclude Include="include\core\Math.h" />
     <ClInclude Include="include\core\RenderManager.h" />
     <ClInclude Include="include\core\ResourceManager.h" />
+    <ClInclude Include="include\ECS\CollisionSystem.h" />
     <ClInclude Include="include\ECS\Component.h" />
     <ClInclude Include="include\ECS\ComponentStorage.h" />
     <ClInclude Include="include\ECS\Entity.h" />
@@ -155,6 +156,7 @@
     <ClInclude Include="include\ECS\SpriteAnimationSystem.h" />
     <ClInclude Include="include\ECS\StateSystem.h" />
     <ClInclude Include="include\ECS\System.h" />
+    <ClInclude Include="include\ECS\TerrainSystem.h" />
     <ClInclude Include="include\ECS\TransSystem.h" />
     <ClInclude Include="include\Scene\GameScene.h" />
     <ClInclude Include="include\Scene\MenuScene.h" />

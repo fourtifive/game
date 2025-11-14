@@ -11,6 +11,7 @@ namespace ECS {
 		~TransSystem()=default;
 
 		void Update(ECS::ECSManager& ecs_mgr,float delta_time) {
+			//std::cout << "TransSystem Update" << std::endl;
 			ecs_mgr.Traverse<ECS::Translate,ECS::Physical>([this,delta_time](Entity id,InputManager& input_mgr,ECS::Translate& trans,ECS::Physical& phy) {
 					HandleMoveMent(delta_time,input_mgr,trans,phy);
 				});
@@ -24,7 +25,7 @@ namespace ECS {
 			if (input_mgr.IsKeyDown(GLFW_KEY_LEFT_SHIFT)) move *= phy.runMutiplier;
 
             if (std::abs(move) > 0.1f)phy.velocity.x += move * phy.maxSpeed*phy.acceleration;
-            else phy.velocity.x -= phy.velocity.x*phy.deceleration;
+            else phy.velocity.x = 0;
 
 			if (move > 0.1f) trans.isfacingright = true;
 			else if (move < -0.1f) trans.isfacingright = false;
@@ -32,9 +33,9 @@ namespace ECS {
 			if (std::abs(phy.velocity.x) > phy.maxSpeed ) {
 				phy.velocity.x = (phy.velocity.x > 0) ? phy.maxSpeed : -phy.maxSpeed;
 			}
-			if(phy.velocity.x>=1.0f|| phy.velocity.x <= -1.0f)
-				trans.position.x += phy.velocity.x;
-			std::cout << trans.position.x << "\n";
+			
+			trans.position.x += phy.velocity.x;
+			//std::cout << phy.velocity.x << std::endl;
 		}
 	};
 }

@@ -3,6 +3,8 @@
 #include<ECS/TransSystem.h>
 #include<ECS/StateSystem.h>
 #include<ECS/SpriteAnimationSystem.h>
+#include<ECS/CollisionSystem.h>
+#include<ECS/TerrainSystem.h>
 
 void GameScene::Enter(SceneManager* mgr)
 {
@@ -13,6 +15,9 @@ void GameScene::Enter(SceneManager* mgr)
 	ecs->Register_System<ECS::TransSystem>();
 	ecs->Register_System<ECS::StateSystem>();
 	ecs->Register_System<ECS::SpriteAnimationSystem>();
+	ecs->Register_System<ECS::CollisionSystem>();
+	ecs->Register_System<ECS::TerrainSystem>()->GenerateTerrain(*ecs,1280,800);
+
 
 	std::cout << "Enter GameScene..." << std::endl;
 

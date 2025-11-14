@@ -149,6 +149,8 @@ namespace ECS {
 		CompStorage<Physical> physical;
 		CompStorage<State> state;
 		CompStorage<PlayerControlled> playercontrolled;
+		CompStorage<ColliderBox> colliderbox;
+		CompStorage<MapData> mapdata;
 
 		std::unordered_map<std::type_index,unsigned int> component_type_map;
 		unsigned int component_type = 0;
@@ -156,6 +158,11 @@ namespace ECS {
 	};
 
 	// 特化组件存储
+	template<>
+	inline CompStorage<MapData>& ECSManager::Get_Comp_Storage<MapData>() {
+		return mapdata;
+	}
+
 	template<>
 	inline CompStorage<Translate>& ECSManager::Get_Comp_Storage<Translate>() {
 		return translate;
@@ -184,5 +191,10 @@ namespace ECS {
 	template<>
 	inline CompStorage<PlayerControlled>& ECSManager::Get_Comp_Storage<PlayerControlled>() {
 		return playercontrolled;
+	}
+
+	template<>
+	inline CompStorage<ColliderBox>& ECSManager::Get_Comp_Storage<ColliderBox>() {
+		return colliderbox;
 	}
 }

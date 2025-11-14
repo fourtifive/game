@@ -4,12 +4,23 @@ bool ResourceManager::Init()
 {
 	std::cout << "Initializing ResourceManager..." << std::endl;
 
-	if(Load_Texture("player_walking","assert/Samurai/Walk.png"))std::cout<<"Loaded texture successfully : player_walking" << std::endl;
+	if(Load_Texture("player_walking","assets/Samurai/Walk.png"))std::cout<<"Loaded texture successfully : player_walking" << std::endl;
 	else std::cout << "Failed to load texture : player_walking" << std::endl;
-	if (Load_Texture("player_idle", "assert/Samurai/Idle.png"))std::cout << "Loaded texture successfully : player_idle" << std::endl;
+	if (Load_Texture("player_idle", "assets/Samurai/Idle.png"))std::cout << "Loaded texture successfully : player_idle" << std::endl;
 	else std::cout << "Failed to load texture : player_idle" << std::endl;
-	if (Load_Texture("player_run", "assert/Samurai/Run.png"))std::cout << "Loaded texture successfully : player_run" << std::endl;
+	if (Load_Texture("player_run", "assets/Samurai/Run.png"))std::cout << "Loaded texture successfully : player_run" << std::endl;
 	else std::cout << "Failed to load texture : player_run" << std::endl;
+    if (Load_Texture("player_jump", "assets/Samurai/Jump.png"))std::cout << "Loaded texture successfully : player_jump" << std::endl;
+    else std::cout << "Failed to load texture : player_jump" << std::endl;
+
+    if (Load_Texture("tile_01", "assets/tiles/PNG/environment/layers/slicedtileset/ground.png"))std::cout << "Loaded texture successfully : tile_01" << std::endl;
+    else std::cout << "Failed to load texture : tile_01" << std::endl;
+    if (Load_Texture("tile_02", "assets/tiles/PNG/environment/layers/slicedtileset/groundb.png"))std::cout << "Loaded texture successfully : tile_02" << std::endl;
+    else std::cout << "Failed to load texture : tile_02" << std::endl;
+    if (Load_Texture("background", "assets/tiles/PNG/environment/layers/background.png"))std::cout << "Loaded texture successfully : background" << std::endl;
+    else std::cout << "Failed to load texture : background" << std::endl;
+    if (Load_Texture("middleground", "assets/tiles/PNG/environment/layers/middleground.png"))std::cout << "Loaded texture successfully : middleground" << std::endl;
+    else std::cout << "Failed to load texture : middleground" << std::endl;
 
 	return true;
 }
