@@ -2,7 +2,7 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>D:\code\game\x64\Release\game.exe</FullPath>
+      <FullPath>E:\GitHub\game\x64\Release\game.exe</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />
