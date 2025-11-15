@@ -17,21 +17,55 @@ namespace ECS {
 				});
 
 			ecs_mgr.TraverseNoInput<ECS::State>([this, delta_time](Entity id,ECS::State& state) {
-					UpdateState(state);
+					UpdateState(state,delta_time);
 				});
 
 		}
 		
 	private:
 
-		void UpdateState(ECS::State& state) {
+		void UpdateState(ECS::State& state,float deltatime) {
 			if (state.pendingStateChange) {
 				state.previousState = state.currentState;
 				state.currentState = state.requestedState;
 				state.stateTimer = 0.0f;
 				state.pendingStateChange = false;
+
+				if (state.currentState.find("attack") != std::string::npos ||
+					state.currentState == "player_jump") {
+					state.isStateLocked = true;
+				}
 			}
+
+			StateUnlock(state, deltatime);
+
 			EnterState(state);
+		}
+
+		void StateUnlock(ECS::State& state, float delta_time) {
+		
+			if (state.currentState.find("attack") != std::string::npos) {
+				if (state.stateTimer > GetAttackDuration(state.currentState)) {
+					state.isStateLocked = false;
+					
+					if (state.attackCombo == 3) state.attackCombo = 0;
+				}
+			}
+
+			if (state.attackCombo > 0 && state.currentState.find("attack") == std::string::npos) {
+				state.comboTimer += delta_time;
+				if (state.comboTimer >= state.COMBORESET) {
+					state.attackCombo = 0;
+					state.comboTimer = 0.0f;
+					state.isStateLocked = false;
+				}
+			}
+
+			if (state.currentState == "player_jump") {
+				if (state.stateTimer > 0.63f) { 
+					state.isStateLocked = false;
+				}
+			}
 		}
 
 		void RequestPlayerState(Entity entity, State& state, Physical& physics,
@@ -40,22 +74,35 @@ namespace ECS {
 			state.stateTimer += delta_time;
 
 			if (!state.isStateLocked) {
-				HandleStateChange(physics,state, input_mgr);
+				HandleStateChange(physics,state, input_mgr,delta_time);
 			}
 		}
 
-		void HandleStateChange(ECS::Physical& physical, ECS::State& state,InputManager& input) {
+		void HandleStateChange(ECS::Physical& physical, ECS::State& state,InputManager& input,float deltatime) {
 
-			if (physical.velocity.x > 0.0f || physical.velocity.x < 0.0f) {
-				if (input.IsKeyDown(GLFW_KEY_LEFT_SHIFT)) {
-					TryChangeState(state, "player_run");
-				}
-				else TryChangeState(state, "player_walking");
+			if (input.IsMouseButtonDown(0)) {
+				HandleAttackState(physical, state, input);
+				return;
+			}
+
+			if(input.IsKeyDown(GLFW_KEY_SPACE)){
+				TryChangeState(state, "player_jump");
+				return;
+			}
+
+			bool movingRight = input.IsKeyDown(GLFW_KEY_D);
+			bool movingLeft = input.IsKeyDown(GLFW_KEY_A);
+			bool wantsRun = input.IsKeyDown(GLFW_KEY_LEFT_SHIFT);
+
+			if (movingRight || movingLeft) {
+				std::string moveState = wantsRun ? "player_run" : "player_walking";
+				TryChangeState(state, moveState);
+				state.isFacingRight = movingRight; 
 			}
 			else {
-				TryChangeState(state,"player_idle");
+				TryChangeState(state, "player_idle");
 			}
-			
+
 		}
 
 		void TryChangeState(ECS::State& state,std::string newstate) {
@@ -64,8 +111,46 @@ namespace ECS {
 			}
 		}
 
+		void HandleAttackState(ECS::Physical& physical, ECS::State& state, InputManager& input) {
+			state.comboTimer = 0.0f;
+			switch (state.attackCombo)
+			{
+			case 0:
+				TryChangeState(state, "player_attack_1");
+				state.attackCombo = 1;
+				break;
+			case 1:
+				if (state.comboTimer < state.COMBORESET) {
+					TryChangeState(state, "player_attack_2");
+					state.attackCombo = 2;
+				}
+				break;
+			case 2:
+				if (state.comboTimer < state.COMBORESET) {
+					TryChangeState(state, "player_attack_3");
+					state.attackCombo = 3;
+				}
+				break;
+			case 3:
+				TryChangeState(state, "player_attack_1");
+				state.attackCombo = 1;
+				break;
+			default:
+				state.attackCombo = 0;
+				TryChangeState(state, "player_attack_1");
+				break;
+			}
+		}
+
 		void EnterState(ECS::State& state) {
 			//std::cout << "Entering State: " << state.currentState << std::endl;
+		}
+
+		float GetAttackDuration(const std::string& attackState) {
+			if (attackState == "player_attack_1") return 0.35f;
+			if (attackState == "player_attack_2") return 0.35f;
+			if (attackState == "player_attack_3") return 0.40f;
+			return 0.3f;
 		}
 
 	};

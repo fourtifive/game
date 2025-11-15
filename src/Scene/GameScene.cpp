@@ -12,12 +12,11 @@ void GameScene::Enter(SceneManager* mgr)
 	render_mgr = &RenderManager::Get_Instance();
 	ecs = &ECS::ECSManager::Get_Instance();
 
-	ecs->Register_System<ECS::TransSystem>();
 	ecs->Register_System<ECS::StateSystem>();
-	ecs->Register_System<ECS::SpriteAnimationSystem>();
+	ecs->Register_System<ECS::TransSystem>();
 	ecs->Register_System<ECS::CollisionSystem>();
+	ecs->Register_System<ECS::SpriteAnimationSystem>();
 	ecs->Register_System<ECS::TerrainSystem>()->GenerateTerrain(*ecs,1280,800);
-
 
 	std::cout << "Enter GameScene..." << std::endl;
 

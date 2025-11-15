@@ -12,6 +12,12 @@ bool ResourceManager::Init()
 	else std::cout << "Failed to load texture : player_run" << std::endl;
     if (Load_Texture("player_jump", "assets/Samurai/Jump.png"))std::cout << "Loaded texture successfully : player_jump" << std::endl;
     else std::cout << "Failed to load texture : player_jump" << std::endl;
+    if (Load_Texture("player_attack_1", "assets/Samurai/Attack_1.png"))std::cout << "Loaded texture successfully : player_attack_1" << std::endl;
+    else std::cout << "Failed to load texture : player_attack_1" << std::endl;
+    if (Load_Texture("player_attack_2", "assets/Samurai/Attack_2.png"))std::cout << "Loaded texture successfully : player_attack_2" << std::endl;
+    else std::cout << "Failed to load texture : player_attack_2" << std::endl;
+    if (Load_Texture("player_attack_3", "assets/Samurai/Attack_3.png"))std::cout << "Loaded texture successfully : player_attack_3" << std::endl;
+    else std::cout << "Failed to load texture : player_attack_3" << std::endl;
 
     if (Load_Texture("tile_01", "assets/tiles/PNG/environment/layers/slicedtileset/ground.png"))std::cout << "Loaded texture successfully : tile_01" << std::endl;
     else std::cout << "Failed to load texture : tile_01" << std::endl;

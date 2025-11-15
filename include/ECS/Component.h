@@ -95,8 +95,16 @@ namespace ECS {
 		std::string previousState;     
 		float stateTimer = 0.0f;                
 
+		float comboTimer = 0.0f;
+		float COMBORESET = 0.50f; // seconds
+		unsigned int attackCombo = 0;
+
 		bool isStateLocked = false;             
 		bool canReceiveInput = true;
+		bool isFacingRight = true;
+
+		std::string requestedState;
+		bool pendingStateChange = false;
 
 		void RequestStateChange(const std::string& newState) {
 			if (!pendingStateChange) {
@@ -108,8 +116,6 @@ namespace ECS {
 		bool IsInState(const std::string& state) const {
 			return currentState == state;
 		}
-		std::string requestedState;
-		bool pendingStateChange = false;
 	};
 
 	enum CollisionLayer

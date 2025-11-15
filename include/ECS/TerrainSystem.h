@@ -60,7 +60,7 @@ namespace ECS
 			std::cout << "Creating tile entity: ";
 			for (int i = 0; i <= tilecount; i++) {
 				Entity tile = ecs_mgr.Create_Entity();
-				std::cout<< tile <<" ";
+				//std::cout<< tile <<" ";
 				Translate tiletrans;
 				tiletrans.position = { i*tile_w , 0.0f };
 				tiletrans.scale = { 1.0f,1.0f };
@@ -92,8 +92,8 @@ namespace ECS
 		void CreateBackgroundAndDecration(ECSManager& ecs_mgr, float width, float height, Entity map) {
 			Entity background = ecs_mgr.Create_Entity();
 			Entity middleground = ecs_mgr.Create_Entity();
-			std::cout << "Background Entity: " << background << std::endl;
-			std::cout << "Middleground Entity: " << middleground << std::endl;
+			//std::cout << "Background Entity: " << background << std::endl;
+			//std::cout << "Middleground Entity: " << middleground << std::endl;
 
 			Translate bgtrans,mgtrans;
 			bgtrans.position = { 0.0f,0.0f };

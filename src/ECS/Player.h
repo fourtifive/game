@@ -22,6 +22,10 @@ public:
 		comp.animations["player_idle"] = {0,0,128,128,6,160,768,128};
 		comp.animations["player_run"] = {0,0,128,128,8,125,1024,128};
 		comp.animations["player_walking"] = {0,0,128,128,9,111,1152,128};
+		comp.animations["player_jump"] = { 0,0,128,128,9,70,1152,128 };
+		comp.animations["player_attack_1"] = {0,0,128,128,4,87,512,128};
+		comp.animations["player_attack_2"] = { 0,0,128,128,4,87,512,128 };
+		comp.animations["player_attack_3"] = { 0,0,128,128,5,80,640,128 };
 
 		ecs.Add_Comp<ECS::State>(PLAYER, ECS::State("player_idle"));
 

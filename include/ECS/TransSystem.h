@@ -12,29 +12,41 @@ namespace ECS {
 
 		void Update(ECS::ECSManager& ecs_mgr,float delta_time) {
 			//std::cout << "TransSystem Update" << std::endl;
-			ecs_mgr.Traverse<ECS::Translate,ECS::Physical>([this,delta_time](Entity id,InputManager& input_mgr,ECS::Translate& trans,ECS::Physical& phy) {
-					HandleMoveMent(delta_time,input_mgr,trans,phy);
+			ecs_mgr.Traverse<ECS::Translate,ECS::Physical,ECS::State>([this,delta_time](Entity id,InputManager& input_mgr
+				,ECS::Translate& trans
+				,ECS::Physical& phy
+				,ECS::State& state) {
+					HandleMoveMent(delta_time,input_mgr,trans,phy,state);
 				});
 		}
 	private:
-		void HandleMoveMent(float delta_time,InputManager& input_mgr, ECS::Translate& trans, ECS::Physical& phy)
+		void HandleMoveMent(float delta_time,InputManager& input_mgr, ECS::Translate& trans, ECS::Physical& phy,ECS::State& state)
 		{
-            float move = 0.0f;
-            if (input_mgr.IsKeyDown(GLFW_KEY_A)) move = -1.0f;
-            if (input_mgr.IsKeyDown(GLFW_KEY_D)) move = 1.0f;
-			if (input_mgr.IsKeyDown(GLFW_KEY_LEFT_SHIFT)) move *= phy.runMutiplier;
+			float move = 0.0f, max = phy.maxSpeed;
+			bool is_attack=0;
+			if (state.currentState == "player_jump" || state.currentState.find("attack") != std::string::npos) {
+				//move = (state.isFacingRight ? 1.0f : -1.0f);
+				is_attack = 1;
+			}
+			else if (state.currentState == "player_walking") {
+				move = (state.isFacingRight ? 1.0f : -1.0f);
+			}
+			else if (state.currentState == "player_run") {
+				move = (state.isFacingRight ? 1.0f : -1.0f)*phy.runMutiplier;
+				max = phy.maxSpeed * phy.runMutiplier;
+			}
 
-            if (std::abs(move) > 0.1f)phy.velocity.x += move * phy.maxSpeed*phy.acceleration;
-            else phy.velocity.x = 0;
+            if (std::abs(move) > 0.1f)phy.velocity.x += move * max*phy.acceleration;
+            else if(!is_attack) phy.velocity.x = 0;
 
-			if (move > 0.1f) trans.isfacingright = true;
-			else if (move < -0.1f) trans.isfacingright = false;
+			trans.isfacingright = state.isFacingRight;
 
-			if (std::abs(phy.velocity.x) > phy.maxSpeed ) {
-				phy.velocity.x = (phy.velocity.x > 0) ? phy.maxSpeed : -phy.maxSpeed;
+			if (std::abs(phy.velocity.x) > max ) {
+				phy.velocity.x = (phy.velocity.x > 0) ? max: -max;
 			}
 			
-			trans.position.x += phy.velocity.x;
+			if(is_attack) trans.position.x += phy.velocity.x*0.35f;
+			else trans.position.x += phy.velocity.x;
 			//std::cout << phy.velocity.x << std::endl;
 		}
 	};
