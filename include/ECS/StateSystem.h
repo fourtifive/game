@@ -73,7 +73,7 @@ namespace ECS {
 
 			state.stateTimer += delta_time;
 
-			if (!state.isStateLocked) {
+			if (!state.isStateLocked&&state.stateTimer>=0.1f) {
 				HandleStateChange(physics,state, input_mgr,delta_time);
 			}
 		}

@@ -24,9 +24,9 @@ namespace ECS {
 		{
 			float move = 0.0f, max = phy.maxSpeed;
 			bool is_attack=0;
-			if (state.currentState == "player_jump" || state.currentState.find("attack") != std::string::npos) {
-				//move = (state.isFacingRight ? 1.0f : -1.0f);
+			if (state.currentState.find("attack") != std::string::npos) {
 				is_attack = 1;
+				if (state.previousState == "player_run")phy.velocity.x *= phy.runMutiplier;
 			}
 			else if (state.currentState == "player_walking") {
 				move = (state.isFacingRight ? 1.0f : -1.0f);
