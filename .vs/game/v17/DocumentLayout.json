@@ -70,8 +70,7 @@
               "RelativeToolTip": "src\\core\\ResourceManager.cpp",
               "ViewState": "AgIAAEgAAAAAAAAAAAAAABAAAACRAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-11-15T09:25:43.195Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-15T09:25:43.195Z"
             },
             {
               "$type": "Document",
@@ -83,8 +82,7 @@
               "RelativeToolTip": "include\\ECS\\TerrainSystem.h",
               "ViewState": "AgIAAE4AAAAAAAAAAAAAABAAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-11-15T01:32:52.787Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-15T01:32:52.787Z"
             },
             {
               "$type": "Document",
@@ -132,8 +130,7 @@
               "RelativeToolTip": "include\\ECS\\ECSManager.h",
               "ViewState": "AgIAAIkAAAAAAAAAAAAuwLUAAABJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-11-15T01:18:47.622Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-15T01:18:47.622Z"
             },
             {
               "$type": "Document",
@@ -145,8 +142,7 @@
               "RelativeToolTip": "include\\ECS\\Component.h",
               "ViewState": "AgIAAFYAAAAAAAAAAAAuwGIAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-11-15T01:19:06.746Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-15T01:19:06.746Z"
             },
             {
               "$type": "Document",
@@ -158,8 +154,7 @@
               "RelativeToolTip": "include\\ECS\\StateSystem.h",
               "ViewState": "AgIAADwAAAAAAAAAAAAAAEwAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-11-15T01:18:40.212Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-15T01:18:40.212Z"
             },
             {
               "$type": "Document",
