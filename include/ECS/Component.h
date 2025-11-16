@@ -96,7 +96,7 @@ namespace ECS {
 		float stateTimer = 0.0f;                
 
 		float comboTimer = 0.0f;
-		float COMBORESET = 0.50f; // seconds
+		float COMBORESET = 0.45f; // seconds
 		unsigned int attackCombo = 0;
 
 		bool isStateLocked = false;             

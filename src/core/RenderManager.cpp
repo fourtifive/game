@@ -290,10 +290,10 @@ void RenderManager::AddSpriteToBatch(GLuint* sprite,Entity id, int srcX, int src
 
     }
     else {
-        position[0]={ trans.position.x + spriteWidth, trans.position.y };
+        position[0]={ trans.position.x + spriteWidth*trans.scale.x, trans.position.y };
         position[1]={ trans.position.x, trans.position.y };
-        position[2]={ trans.position.x, trans.position.y + spriteHeight };
-        position[3]={trans.position.x + spriteWidth, trans.position.y + spriteHeight};
+        position[2]={ trans.position.x, trans.position.y + spriteHeight*trans.scale.y };
+        position[3]={trans.position.x + spriteWidth*trans.scale.x, trans.position.y + spriteHeight*trans.scale.y};
     }
 
     

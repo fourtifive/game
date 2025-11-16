@@ -4,7 +4,7 @@ bool ResourceManager::Init()
 {
 	std::cout << "Initializing ResourceManager..." << std::endl;
 
-	if(Load_Texture("player_walking","assets/Samurai/Walk.png"))std::cout<<"Loaded texture successfully : player_walking" << std::endl;
+	/*if(Load_Texture("player_walking","assets/Samurai/Walk.png"))std::cout<<"Loaded texture successfully : player_walking" << std::endl;
 	else std::cout << "Failed to load texture : player_walking" << std::endl;
 	if (Load_Texture("player_idle", "assets/Samurai/Idle.png"))std::cout << "Loaded texture successfully : player_idle" << std::endl;
 	else std::cout << "Failed to load texture : player_idle" << std::endl;
@@ -17,6 +17,21 @@ bool ResourceManager::Init()
     if (Load_Texture("player_attack_2", "assets/Samurai/Attack_2.png"))std::cout << "Loaded texture successfully : player_attack_2" << std::endl;
     else std::cout << "Failed to load texture : player_attack_2" << std::endl;
     if (Load_Texture("player_attack_3", "assets/Samurai/Attack_3.png"))std::cout << "Loaded texture successfully : player_attack_3" << std::endl;
+    else std::cout << "Failed to load texture : player_attack_3" << std::endl;*/
+
+    if (Load_Texture("player_walking", "assets/with_outline/WALK.png"))std::cout << "Loaded texture successfully : player_walking" << std::endl;
+    else std::cout << "Failed to load texture : player_walking" << std::endl;
+    if (Load_Texture("player_idle", "assets/with_outline/IDLE.png"))std::cout << "Loaded texture successfully : player_idle" << std::endl;
+    else std::cout << "Failed to load texture : player_idle" << std::endl;
+    if (Load_Texture("player_run", "assets/with_outline/RUN.png"))std::cout << "Loaded texture successfully : player_run" << std::endl;
+    else std::cout << "Failed to load texture : player_run" << std::endl;
+    if (Load_Texture("player_jump", "assets/with_outline/JUMP.png"))std::cout << "Loaded texture successfully : player_jump" << std::endl;
+    else std::cout << "Failed to load texture : player_jump" << std::endl;
+    if (Load_Texture("player_attack_1", "assets/with_outline/ATTACK1.png"))std::cout << "Loaded texture successfully : player_attack_1" << std::endl;
+    else std::cout << "Failed to load texture : player_attack_1" << std::endl;
+    if (Load_Texture("player_attack_2", "assets/with_outline/ATTACK2.png"))std::cout << "Loaded texture successfully : player_attack_2" << std::endl;
+    else std::cout << "Failed to load texture : player_attack_2" << std::endl;
+    if (Load_Texture("player_attack_3", "assets/with_outline/ATTACK3.png"))std::cout << "Loaded texture successfully : player_attack_3" << std::endl;
     else std::cout << "Failed to load texture : player_attack_3" << std::endl;
 
     if (Load_Texture("tile_01", "assets/tiles/PNG/environment/layers/slicedtileset/ground.png"))std::cout << "Loaded texture successfully : tile_01" << std::endl;
