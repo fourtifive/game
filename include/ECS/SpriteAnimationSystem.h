@@ -16,7 +16,7 @@ namespace ECS{
 				{
 					if (renderdata.Id != state.currentState) {
 						anim.animations[renderdata.Id].srcX = 0;
-						anim.animations[renderdata.Id].srcY = 0;
+						//anim.animations[renderdata.Id].srcY = 0;
 						anim.animID = state.currentState;
 						renderdata.Id = state.currentState;
 						anim.currentFrame = 0.0f;
@@ -41,7 +41,7 @@ namespace ECS{
 		
 		void UpdataSpriteFrame(ECS::AnimationData& anim) {
 			anim.animations[anim.animID].srcX = anim.currentFrame * anim.animations[anim.animID].spriteWidth;
-			anim.animations[anim.animID].srcY = 0;
+			//anim.animations[anim.animID].srcY = 0;
 		}
 
 	};

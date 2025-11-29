@@ -44,9 +44,9 @@ namespace ECS
 			groundbox.owner = ground;
 			groundbox.is_active = true;
 			groundbox.is_static = true;
-			groundbox.offsetX = -8.0f;
-			groundbox.height = tile_h+groundbox.offsetX;
-			groundbox.width = width+groundbox.offsetY;
+			groundbox.offsetY = 8.0f;
+			groundbox.height = tile_h;
+			groundbox.width = width;
 			groundbox.mask = ECS::CollisionLayer::PLAYER | ECS::CollisionLayer::ENEMY;
 			groundbox.layer = ECS::CollisionLayer::GROUND;
 

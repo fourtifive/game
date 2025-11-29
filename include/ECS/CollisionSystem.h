@@ -51,10 +51,10 @@ namespace ECS
                 {
                     if (box.is_active) {
                         box.owner = id;
-                        box.xL = trans.position.x;
-						box.xR = trans.position.x + box.width;
+                        box.xL = trans.position.x+box.offsetX;
+						box.xR = trans.position.x + box.width-box.offsetX;
                         box.yD = trans.position.y;
-						box.yU = trans.position.y + box.height;
+						box.yU = trans.position.y + box.height-box.offsetY;
                         activeColliders.push_back(&box);
                     }
                 });
@@ -73,7 +73,6 @@ namespace ECS
         }
 
 		bool CheckCollision(const ECS::ColliderBox& boxA, const ECS::ColliderBox& boxB) {
-			//std::cout << "Checking collision between BoxA(" << boxA.xL << "," << boxA.yD << "," << boxA.xR << "," << boxA.yU << ") and BoxB(" << boxB.xL << "," << boxB.yD << "," << boxB.xR << "," << boxB.yU << ")\n";
             if (boxA.xR - boxB.xL < 5 || boxA.xL - boxB.xR > -5) return 0;
             if (boxA.yD - boxB.yU > -5 || boxA.yU - boxB.yD < 5) return 0;
 			return 1;
@@ -86,10 +85,10 @@ namespace ECS
 				trans.position.x -= phy.velocity.x;
 				trans.position.y -= phy.velocity.y;
 
-                boxA.xL = trans.position.x;
-                boxA.xR = trans.position.x + boxA.width;
+                boxA.xL = trans.position.x + boxA.offsetX;
+                boxA.xR = trans.position.x + boxA.width - boxA.offsetX;
                 boxA.yD = trans.position.y;
-                boxA.yU = trans.position.y + boxA.height;
+                boxA.yU = trans.position.y + boxA.height - boxA.offsetY;
             }
 			    
             if (!boxB.is_static) {
@@ -98,10 +97,10 @@ namespace ECS
                 trans.position.x -= phy.velocity.x;
                 trans.position.y -= phy.velocity.y;
 
-                boxB.xL = trans.position.x;
-                boxB.xR = trans.position.x + boxB.width;
+                boxB.xL = trans.position.x + boxB.offsetX;
+                boxB.xR = trans.position.x + boxB.width - boxB.offsetX;
                 boxB.yD = trans.position.y;
-                boxB.yU = trans.position.y + boxB.height;
+                boxB.yU = trans.position.y + boxB.height - boxB.offsetY;
             }
 				
 		}

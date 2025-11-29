@@ -31,38 +31,26 @@ namespace ECS {
 				state.stateTimer = 0.0f;
 				state.pendingStateChange = false;
 
-				if (state.currentState.find("attack") != std::string::npos ||
-					state.currentState == "player_jump") {
+				if (state.currentState.find("attack") != std::string::npos) {
 					state.isStateLocked = true;
 				}
 			}
 
-			StateUnlock(state, deltatime);
-
+			if (state.currentState.find("attack") != std::string::npos)Attackupdata(state, deltatime);
 			EnterState(state);
 		}
 
-		void StateUnlock(ECS::State& state, float delta_time) {
+		void Attackupdata(ECS::State& state, float delta_time) {
 		
-			if (state.currentState.find("attack") != std::string::npos) {
-				if (state.stateTimer > GetAttackDuration(state.currentState)) {
-					state.isStateLocked = false;
-					
-					if (state.attackCombo == 3) state.attackCombo = 0;
-				}
+			if (state.stateTimer > GetAttackDuration(state.currentState)) {
+				state.isStateLocked = false;
+				if (state.attackCombo == 3) state.attackCombo = 0;
 			}
 
-			if (state.attackCombo > 0 && state.currentState.find("attack") == std::string::npos) {
-				state.comboTimer += delta_time;
+			if (state.attackCombo > 0) {
 				if (state.comboTimer >= state.COMBORESET) {
 					state.attackCombo = 0;
 					state.comboTimer = 0.0f;
-					state.isStateLocked = false;
-				}
-			}
-
-			if (state.currentState == "player_jump") {
-				if (state.stateTimer > 0.63f) { 
 					state.isStateLocked = false;
 				}
 			}
@@ -71,9 +59,25 @@ namespace ECS {
 		void RequestPlayerState(Entity entity, State& state, Physical& physics,
 			float delta_time, InputManager& input_mgr) {
 
+			if(state.currentState.find("attack") == std::string::npos)state.comboTimer += delta_time;
 			state.stateTimer += delta_time;
 
-			if (!state.isStateLocked&&state.stateTimer>=0.06f) {
+			if (state.currentState == "player_jump") {
+				if (input_mgr.IsMouseButtonDown(0)) {
+					HandleAttackState(physics, state, input_mgr);
+					return;
+				}
+				if (input_mgr.IsKeyDown(GLFW_KEY_SPACE)) {
+					if (state.stateTimer >= 0.25f) state.isfalling = true;
+					return;
+				}
+				else(!input_mgr.IsKeyDown(GLFW_KEY_SPACE)) {
+					if (state.stateTimer >= 0.05f) state.isfalling = true;
+					return;
+				}
+			}
+
+			if (!state.isStateLocked&&state.stateTimer>=0.1f) {
 				HandleStateChange(physics,state, input_mgr,delta_time);
 			}
 		}
@@ -112,7 +116,6 @@ namespace ECS {
 		}
 
 		void HandleAttackState(ECS::Physical& physical, ECS::State& state, InputManager& input) {
-			state.comboTimer = 0.0f;
 			switch (state.attackCombo)
 			{
 			case 0:
@@ -136,14 +139,15 @@ namespace ECS {
 				state.attackCombo = 1;
 				break;
 			default:
-				state.attackCombo = 0;
+				state.attackCombo = 1;
 				TryChangeState(state, "player_attack_1");
 				break;
 			}
+			state.comboTimer = 0.0f;
 		}
 
 		void EnterState(ECS::State& state) {
-			//std::cout << "Entering State: " << state.currentState << std::endl;
+			std::cout << "Entering State: " << state.currentState << std::endl;
 		}
 
 		float GetAttackDuration(const std::string& attackState) {

@@ -42,7 +42,9 @@ private:
 	ECS::ECSManager* ecs_mgr = nullptr;
 
 	GLuint shader_program = 0;
+	GLuint line_shader_program = 0;
 	GLuint vao = 0, vbo = 0, ebo = 0;
+	GLuint line_vao = 0, line_vbo = 0;
 
 	// projection matrix for 2D rendering
 	glm::mat4 projectionMatrix;
@@ -71,6 +73,7 @@ private:
     void EndBatch();
 
 	void FlushBatch();
+
 private:
 	void DebugBatchVertices();
 
@@ -79,4 +82,7 @@ private:
 	bool IsInNDC(const glm::vec4& point);
 
 	void DebugBoundTextures();
+
+	void DebugColliderBox(ECS::CompStorage<ECS::ColliderBox>& boxes);
+
 };
