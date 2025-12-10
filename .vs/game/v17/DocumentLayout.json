@@ -61,6 +61,7 @@
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
+<<<<<<< HEAD
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
@@ -87,7 +88,8 @@
               "RelativeToolTip": "include\\ECS\\TerrainSystem.h",
               "ViewState": "AgIAABgAAAAAAAAAAAAAABAAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-11-15T01:32:52.787Z"
+              "WhenOpened": "2025-11-15T01:32:52.787Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -129,6 +131,7 @@
             },
             {
               "$type": "Document",
+<<<<<<< HEAD
               "DocumentIndex": 0,
               "Title": "Player.h",
               "DocumentMoniker": "D:\\code\\game\\src\\ECS\\Player.h",
