@@ -38,7 +38,7 @@ void RenderManager::Init(int w,int h)
 
 	glBufferData(GL_ELEMENT_ARRAY_BUFFER, indices.size() * sizeof(unsigned int), indices.data(), GL_STATIC_DRAW);
 
-    // set vertex attributes
+	// set vertex attributes
     glEnableVertexAttribArray(0); // Î»ÖÃ
     glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex), (const void*)offsetof(Vertex, position));
     glEnableVertexAttribArray(1); // ÎÆÀí×ø±ê
@@ -52,40 +52,7 @@ void RenderManager::Init(int w,int h)
 	//initialize projection matrix
 	projectionMatrix = glm::ortho(0.0f, screenWidth, 0.0f, screenHeight, -1.0f, 1.0f);
 
-    glBindVertexArray(0);
-
-    const char* lineVS = R"(
-        #version 330 core
-        layout (location = 0) in vec2 aPos;
-
-        uniform mat4 uProjection;
-        
-        void main()
-        {
-            gl_Position = uProjection*vec4(aPos, 0.0f, 1.0);
-        }
-    )";
-    const char* lineFS = R"(
-        #version 330 core
-        out vec4 FragColor;
-        void main()
-        {
-            FragColor = vec4(1.0, 0.0, 0.0, 1.0); // Red color for collider boxes
-        }
-    )";
-
-	line_shader_program = CompileShader(lineVS, lineFS);
-
-	glGenVertexArrays(1, &line_vao);
-	glGenBuffers(1, &line_vbo);
-
-	glBindVertexArray(line_vao);
-
-	glBindBuffer(GL_ARRAY_BUFFER, line_vbo);
-	glBufferData(GL_ARRAY_BUFFER, 10 * sizeof(float), nullptr, GL_DYNAMIC_DRAW); // 4 vertices for a box
-
-    glEnableVertexAttribArray(0);
-    glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 2 * sizeof(float), (void*)0);
+    //DebugProjectionMatrix();
 
     glBindVertexArray(0);
 
@@ -100,7 +67,8 @@ void RenderManager::Render(GLFWwindow* window)
 
 	//batch all renderable entities
     auto& renderble = ecs_mgr->Get_Comp_Storage<ECS::RenderData>();
-    
+    //auto& box = ecs_mgr->Get_Comp_Storage<ECS::ColliderBox>();
+     
 	//std::cout << "---Rendering---" << std::endl;
     for (auto& data : renderble.Get_Comp()) {
 		//std::cout << data.second.Id <<" "<<data.first<<" ";
@@ -116,10 +84,6 @@ void RenderManager::Render(GLFWwindow* window)
     //std::cout << std::endl;
 
 	EndBatch();
-
-    auto& boxes = ecs_mgr->Get_Comp_Storage<ECS::ColliderBox>();
-    
-    DebugColliderBox(boxes);
 
     glfwSwapBuffers(window);
 
@@ -463,32 +427,7 @@ void RenderManager::DebugBoundTextures()
 	}
 }
 
-void RenderManager::DebugColliderBox(ECS::CompStorage<ECS::ColliderBox>& boxes)
-{
-	glUseProgram(line_shader_program);
-    
-	glLineWidth(1.0f);
 
-    GLint projLocation = glGetUniformLocation(line_shader_program, "uProjection");
-    glUniformMatrix4fv(projLocation, 1, GL_FALSE, glm::value_ptr(projectionMatrix));
-    for (auto& box : boxes.Get_Comp()) {
-        float vertices[10]{
-            box.second.xL, box.second.yD,
-            box.second.xR, box.second.yD,
-            box.second.xR, box.second.yU,
-            box.second.xL, box.second.yU,
-            box.second.xL, box.second.yD
-        };
-
-        glBindVertexArray(line_vao);
-        glBindBuffer(GL_ARRAY_BUFFER, line_vbo);
-        glBufferData(GL_ARRAY_BUFFER, 10 * sizeof(float), vertices, GL_DYNAMIC_DRAW);
-
-		glDrawArrays(GL_LINE_STRIP, 0, 5);
-    }
-
-    glBindVertexArray(0);
-}
 
 GLuint RenderManager::CompileShader(const char* vertexSource, const char* fragmentSource)
 {

@@ -16,25 +16,15 @@ namespace ECS {
 	{
 		Physical() = default;
 		Physical(float maxSpeed, float acceleration,float deceleration) : maxSpeed(maxSpeed),acceleration(acceleration),deceleration(deceleration)
-		{
-			runSpeed = maxSpeed * 1.5f;
-			attackSpeed = maxSpeed * 0.5f;
-			jumpSpeed = maxSpeed * 0.7f;
-			runToattackSpeed = runSpeed * 0.5f;
-			runTojumpSpeed = runSpeed * 0.7f;
-		}
+		{}
 		Point velocity = {0,0};
 		float acceleration;
 		float deceleration;
 		float maxSpeed;
-		float runSpeed;
-		float attackSpeed;
-		float jumpSpeed;
-		float runTojumpSpeed;
-		float runToattackSpeed;
 		float runMutiplier=1.5f;
 
-		float gravity = 9.8f;
+		float mass = 1.0f;
+		float gravity = 0.0f;
 		//float friction;
 		
 	};
@@ -108,8 +98,6 @@ namespace ECS {
 		float comboTimer = 0.0f;
 		float COMBORESET = 0.45f; // seconds
 		unsigned int attackCombo = 0;
-
-		bool isfalling = false;
 
 		bool isStateLocked = false;             
 		bool canReceiveInput = true;
